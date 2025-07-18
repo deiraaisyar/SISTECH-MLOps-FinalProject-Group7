@@ -1,2 +1,4 @@
 nltk>=3.5
 requests>=2.0
+translate
+langdetect
