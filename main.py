@@ -6,29 +6,43 @@ import re
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sentence_transformers import SentenceTransformer
 import pickle
 import requests
 import base64
 import os
+import json
 
 # define variables
-lemmatizer = WordNetLemmatizer()
-stop_words = stopwords.words('english')
 
-# create and save job embeddings
-# tfidf_vectorizer_job = TfidfVectorizer()
-# job_df = pd.read_csv('job_preprocessed.csv')
-# job_embeddings_tfidf = tfidf_vectorizer_job.fit_transform(job_df['text'])
-# with open('job_embeddings_tfidf.pkl', 'wb') as f:
-#     pickle.dump(job_embeddings_tfidf, f)
 
-# with open('job_vectorizer_tfidf.pkl', 'wb') as f:
-#     pickle.dump(tfidf_vectorizer_job, f)
+# major_df = pd.read_csv('preprocessed/majors.csv')
 
-# # create course embeddings
-# tfidf_vectorizer_course = TfidfVectorizer()
-# course_df = pd.read_csv('edx_courses.csv')
-# course_embeddings_tfidf = tfidf_vectorizer_course.fit_transform(course_df['text'])
+job_p_df = pd.read_csv('preprocessed/linkedin_jobs.csv')
+job_df = pd.read_csv('scrape_result/linkedin_jobs.csv')
+
+course_p_df = pd.read_csv('preprocessed/edx_courses.csv')
+course_df = pd.read_csv('scrape_result/edx_courses.csv')
+
+# uncomment if you want to have jobs and courses on the same vector space
+# if not os.path.exists('pkl/tfidf_vectorizer.pkl'):
+#     tfidf_vectorizer = TfidfVectorizer()
+#     tfidf_vectorizer.fit(pd.concat([job_p_df['text'].astype(str), course_p_df['text'].astype(str)], ignore_index=True))
+#     with open('pkl/tfidf_vectorizer.pkl', 'wb') as f:
+#         pickle.dump(tfidf_vectorizer, f)
+# else:
+#     with open('pkl/tfidf_vectorizer.pkl', 'rb') as f:
+#         tfidf_vectorizer = pickle.load(f)
+
+# ST Method
+if not os.path.exists('pkl/st_model.pkl'):
+    st_model = SentenceTransformer("all-MiniLM-L6-v2")
+    with open('pkl/st_model.pkl', 'wb') as f:
+        pickle.dump(st_model, f)
+else:
+    with open('pkl/st_model.pkl', 'rb') as f:
+        st_model = pickle.load(f)
+
 
 def lowering(text: str) -> str:
     text = text.lower()
@@ -39,11 +53,13 @@ def remove_punctuation_and_symbol(text: str) -> str:
     return text
 
 def stopword_removal(text: str) -> str:
+    stop_words = stopwords.words('english')
     text = " ".join([word for word in text.split() if word not in stop_words])
     return text
 
 # use lemmatization instead of stemming for better accuracy and context understanding
 def lemmatization(text: str) -> str:
+    lemmatizer = WordNetLemmatizer()
     text = " ".join([lemmatizer.lemmatize(word) for word in text.split()])
     return text
 
@@ -56,8 +72,88 @@ def preprocessing(text: str) -> str:
 
     return text
 
+def recommend_job(text:str, top_n:int = 3) -> dict:
+    
+    # TF-IDF Method
+    
+    # if not os.path.exists('pkl/job_vectorizer.pkl'):
+    #     job_vectorizer = TfidfVectorizer()
+    #     job_vectorizer.fit(job_p_df['text'].astype(str), ignore_index=True)
+    #     with open('pkl/job_vectorizer.pkl', 'wb') as f:
+    #             pickle.dump(job_vectorizer, f)
+    # else:
+    #     with open('pkl/job_vectorizer.pkl', 'rb') as f:
+    #         job_vectorizer = pickle.load(f)
+    # # job_vectors = tfidf_vectorizer.transform(job_p_df['text'].astype(str))
+    # # text_vector = tfidf_vectorizer.transform([text])
+    # job_vectors = job_vectorizer.transform(job_p_df['text'].astype(str))
+    # text_vector = job_vectorizer.transform([text])
+    
+    # dists = 1-cosine_similarity(text_vector, job_vectors).flatten()
+    
+    
+    # ST Method
+    if not os.path.exists('emb/st_jobs_embeddings.pkl'):
+        st_jobs_embeddings = st_model.encode(job_p_df['text'].astype(str))
+        with open('emb/st_jobs_embeddings.pkl', 'wb') as f:
+            pickle.dump(st_jobs_embeddings, f)
+    else:
+        with open('emb/st_jobs_embeddings.pkl', 'rb') as f:
+            st_jobs_embeddings = pickle.load(f)
+    
+    text_vector_st = st_model.encode(text)
 
-def recommend_career(r:int, i:int, a:int, s:int, e:int, c:int, top_n:int = 5) -> dict:    
+    dists = 1-cosine_similarity([text_vector_st], st_jobs_embeddings).flatten()
+    
+    job_df_sorted = job_df.iloc[np.argsort(dists)[:5], :]
+    top_n_jobs = []
+    level = ['Internship', 'Entry level', 'Associate', 'Mid-Senior level', 'Director', 'Executive']
+
+    for lvl in level:
+        job = job_df_sorted[job_df_sorted['level'] == lvl].head(1).to_dict(orient='records')
+        if job:
+            top_n_jobs.append(job)
+        if len(top_n_jobs) >= top_n:
+            break
+
+    return top_n_jobs
+
+def recommend_courses(text:str, top_n:int = 3) -> dict: 
+    # TF-IDF Method 
+    # if not os.path.exists('pkl/course_vectorizer.pkl'):
+    #     course_vectorizer = TfidfVectorizer()
+    #     course_vectorizer.fit(course_p_df['text'].astype(str), ignore_index=True)
+    #     with open('pkl/course_vectorizer.pkl', 'wb') as f:
+    #         pickle.dump(course_vectorizer, f)
+    # else:
+    #     with open('pkl/course_vectorizer.pkl', 'rb') as f:
+    #         course_vectorizer = pickle.load(f)
+    # # course_vectors = tfidf_vectorizer.transform(course_p_df['text'].astype(str))
+    # # text_vector = tfidf_vectorizer.transform([text])
+    # course_vectors = course_vectorizer.transform(course_p_df['text'].astype(str))
+    # text_vector = course_vectorizer.transform([text])
+    # dists = 1-cosine_similarity(text_vector, course_vectors).flatten()
+    
+    
+    # ST Method
+    if not os.path.exists('emb/st_courses_embeddings.pkl'):
+        st_courses_embeddings = st_model.encode(course_p_df['text'].astype(str))
+        with open('emb/st_courses_embeddings.pkl', 'wb') as f:
+            pickle.dump(st_courses_embeddings, f)
+    else:
+        with open('emb/st_courses_embeddings.pkl', 'rb') as f:
+            st_courses_embeddings = pickle.load(f)
+    text_vector_st = st_model.encode(text)
+    dists = 1-cosine_similarity([text_vector_st], st_courses_embeddings).flatten()
+    
+    course_df_sorted = course_df.iloc[np.argsort(dists), :]
+    top_n_courses = {}
+    top_n_courses['courses'] = course_df_sorted[course_df_sorted['product'] == 'Course'].head(top_n).to_dict(orient='records')
+    top_n_courses['certifications'] = course_df_sorted[(course_df_sorted['product'] == 'Program') & (course_df_sorted['program_type'].apply(lambda x: "Professional Certificate" in x))].head(top_n).to_dict(orient='records')
+
+    return top_n_courses
+
+def recommend_career(r:int, i:int, a:int, s:int, e:int, c:int, top_n:int = 3) -> dict:    
     url = f"https://services.onetcenter.org/ws/mnm/interestprofiler/careers?Realistic={r}&Investigative={i}&Artistic={a}&Social={s}&Enterprising={e}&Conventional={c}"
     
     headers={'User-Agent': 'python-OnetWebService/1.00 (bot)',
@@ -70,9 +166,9 @@ def recommend_career(r:int, i:int, a:int, s:int, e:int, c:int, top_n:int = 5) ->
     
     data = r.json()
     
-    top_3_careers = []
+    top_n_careers = []
     
-    for career in data['career'][:3]:
+    for career in data['career'][:top_n]:
         report_url = f"https://services.onetcenter.org/ws/mnm/careers/{career['code']}/report"
         r = requests.get(report_url, headers=headers)
         if r.status_code != 200:
@@ -120,17 +216,7 @@ def recommend_career(r:int, i:int, a:int, s:int, e:int, c:int, top_n:int = 5) ->
             for ex in examples:
                 c_technologies.append(ex['name'])
         
-        title_preprocessed = preprocessing(title)
-        also_called_preprocessed = preprocessing(also_called)
-        what_they_do_preprocessed = preprocessing(what_they_do)
-        on_the_job_preprocessed = preprocessing(on_the_job)
-        c_knowledges_preprocessed = " ".join([preprocessing(k) for k in c_knowledges])
-        c_skills_preprocessed = " ".join([preprocessing(s) for s in c_skills])
-        c_abilities_preprocessed = " ".join([preprocessing(a) for a in c_abilities])
-        c_technologies_preprocessed = " ".join([preprocessing(t) for t in c_technologies])
-        preprocessed_text = title_preprocessed + " " + also_called_preprocessed + " " + what_they_do_preprocessed + " " + on_the_job_preprocessed + " " + c_knowledges_preprocessed + " " + c_skills_preprocessed + " " + c_abilities_preprocessed + " " + c_technologies_preprocessed
-        
-        top_3_careers.append({
+        top_n_careers.append({
             'title': title,
             'also_called': also_called,
             'what_they_do': what_they_do,
@@ -138,35 +224,29 @@ def recommend_career(r:int, i:int, a:int, s:int, e:int, c:int, top_n:int = 5) ->
             'knowledges': c_knowledges,
             'skills': c_skills,
             'abilities': c_abilities,
-            'technologies': c_technologies,
-            'preprocessed_text': preprocessed_text
+            'technologies': c_technologies
         })
     
-    return top_3_careers    
-
-
-
-def recommend_job(text:str, top_n:int = 3) -> dict:
-    job_df = pd.read_csv('preprocessed/linkedin_jobs.csv')
-    job_vectorizer = TfidfVectorizer()
-    job_vectors = job_vectorizer.fit_transform(job_df['text'].astype(str))
-    text_vector = job_vectorizer.transform([text])
-    dists = 1-cosine_similarity(text_vector, job_vectors).flatten()
-    top_n_jobs = job_df.iloc[np.argsort(dists)[:top_n], :].to_dict(orient='records')
-    return top_n_jobs
-
-def recommend_courses(text:str, top_n:int = 3) -> dict:
-    course_df = pd.read_csv('preprocessed/edx_courses.csv')
-    course_vectorizer = TfidfVectorizer()
-    course_vectors = course_vectorizer.fit_transform(course_df['text'].astype(str))
-    text_vector = course_vectorizer.transform([text])
-    dists = 1-cosine_similarity(text_vector, course_vectors).flatten()
-    top_n_courses = course_df.iloc[np.argsort(dists)[:top_n], :].to_dict(orient='records')
-    return top_n_courses
+    for career in top_n_careers:
+        title_preprocessed = preprocessing(career['title'])
+        also_called_preprocessed = preprocessing(career['also_called'])
+        what_they_do_preprocessed = preprocessing(career['what_they_do'])
+        on_the_job_preprocessed = preprocessing(career['on_the_job'])
+        c_knowledges_preprocessed = " ".join([preprocessing(k) for k in career['knowledges']])
+        c_skills_preprocessed = " ".join([preprocessing(s) for s in career['skills']])
+        c_abilities_preprocessed = " ".join([preprocessing(a) for a in career['abilities']])
+        c_technologies_preprocessed = " ".join([preprocessing(t) for t in career['technologies']])
+        preprocessed_text = title_preprocessed + " " + also_called_preprocessed + " " + what_they_do_preprocessed + " " + on_the_job_preprocessed + " " + c_knowledges_preprocessed + " " + c_skills_preprocessed + " " + c_abilities_preprocessed + " " + c_technologies_preprocessed
+        
+        career['job'] = recommend_job(preprocessed_text)
+        career['course'] = recommend_courses(preprocessed_text)
+        
+        # uncomment if you want to recommend courses based on the job text
+        # for job in career['job']:
+        #     job_text = job_df[job_df['job_link'] == job['job_link']]['text'].values[0]
+        #     job['course'] = recommend_courses(job_text)
+        
     
-res = recommend_career(0, 5, 0, 0, 5, 5)
-print(res)
-jobs = recommend_job(res[0]['preprocessed_text'])
-print(jobs)
-courses = recommend_courses(jobs[0]['text'])
-print(courses)
+    return top_n_careers    
+    
+print(json.dumps(recommend_career(0, 5, 0, 0, 5, 5)))
