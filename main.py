@@ -35,13 +35,13 @@ course_df = pd.read_csv('scrape_result/edx_courses.csv')
 #         tfidf_vectorizer = pickle.load(f)
 
 # ST Method
-if not os.path.exists('pkl/st_model.pkl'):
-    st_model = SentenceTransformer("all-MiniLM-L6-v2")
-    with open('pkl/st_model.pkl', 'wb') as f:
-        pickle.dump(st_model, f)
-else:
-    with open('pkl/st_model.pkl', 'rb') as f:
-        st_model = pickle.load(f)
+# if not os.path.exists('pkl/st_model.pkl'):
+#     st_model = SentenceTransformer("all-MiniLM-L6-v2")
+#     with open('pkl/st_model.pkl', 'wb') as f:
+#         pickle.dump(st_model, f)
+# else:
+#     with open('pkl/st_model.pkl', 'rb') as f:
+#         st_model = pickle.load(f)
 
 
 def lowering(text: str) -> str:
@@ -76,34 +76,34 @@ def recommend_job(text:str, top_n:int = 3) -> dict:
     
     # TF-IDF Method
     
-    # if not os.path.exists('pkl/job_vectorizer.pkl'):
-    #     job_vectorizer = TfidfVectorizer()
-    #     job_vectorizer.fit(job_p_df['text'].astype(str), ignore_index=True)
-    #     with open('pkl/job_vectorizer.pkl', 'wb') as f:
-    #             pickle.dump(job_vectorizer, f)
-    # else:
-    #     with open('pkl/job_vectorizer.pkl', 'rb') as f:
-    #         job_vectorizer = pickle.load(f)
-    # # job_vectors = tfidf_vectorizer.transform(job_p_df['text'].astype(str))
-    # # text_vector = tfidf_vectorizer.transform([text])
-    # job_vectors = job_vectorizer.transform(job_p_df['text'].astype(str))
-    # text_vector = job_vectorizer.transform([text])
+    if not os.path.exists('pkl/job_vectorizer.pkl'):
+        job_vectorizer = TfidfVectorizer()
+        job_vectorizer.fit(job_p_df['text'].astype(str), ignore_index=True)
+        with open('pkl/job_vectorizer.pkl', 'wb') as f:
+                pickle.dump(job_vectorizer, f)
+    else:
+        with open('pkl/job_vectorizer.pkl', 'rb') as f:
+            job_vectorizer = pickle.load(f)
+    # job_vectors = tfidf_vectorizer.transform(job_p_df['text'].astype(str))
+    # text_vector = tfidf_vectorizer.transform([text])
+    job_vectors = job_vectorizer.transform(job_p_df['text'].astype(str))
+    text_vector = job_vectorizer.transform([text])
     
-    # dists = 1-cosine_similarity(text_vector, job_vectors).flatten()
+    dists = 1-cosine_similarity(text_vector, job_vectors).flatten()
     
     
     # ST Method
-    if not os.path.exists('emb/st_jobs_embeddings.pkl'):
-        st_jobs_embeddings = st_model.encode(job_p_df['text'].astype(str))
-        with open('emb/st_jobs_embeddings.pkl', 'wb') as f:
-            pickle.dump(st_jobs_embeddings, f)
-    else:
-        with open('emb/st_jobs_embeddings.pkl', 'rb') as f:
-            st_jobs_embeddings = pickle.load(f)
+    # if not os.path.exists('emb/st_jobs_embeddings.pkl'):
+    #     st_jobs_embeddings = st_model.encode(job_p_df['text'].astype(str))
+    #     with open('emb/st_jobs_embeddings.pkl', 'wb') as f:
+    #         pickle.dump(st_jobs_embeddings, f)
+    # else:
+    #     with open('emb/st_jobs_embeddings.pkl', 'rb') as f:
+    #         st_jobs_embeddings = pickle.load(f)
     
-    text_vector_st = st_model.encode(text)
+    # text_vector_st = st_model.encode(text)
 
-    dists = 1-cosine_similarity([text_vector_st], st_jobs_embeddings).flatten()
+    # dists = 1-cosine_similarity([text_vector_st], st_jobs_embeddings).flatten()
     
     job_df_sorted = job_df.iloc[np.argsort(dists)[:5], :]
     top_n_jobs = []
@@ -120,31 +120,31 @@ def recommend_job(text:str, top_n:int = 3) -> dict:
 
 def recommend_courses(text:str, top_n:int = 3) -> dict: 
     # TF-IDF Method 
-    # if not os.path.exists('pkl/course_vectorizer.pkl'):
-    #     course_vectorizer = TfidfVectorizer()
-    #     course_vectorizer.fit(course_p_df['text'].astype(str), ignore_index=True)
-    #     with open('pkl/course_vectorizer.pkl', 'wb') as f:
-    #         pickle.dump(course_vectorizer, f)
-    # else:
-    #     with open('pkl/course_vectorizer.pkl', 'rb') as f:
-    #         course_vectorizer = pickle.load(f)
-    # # course_vectors = tfidf_vectorizer.transform(course_p_df['text'].astype(str))
-    # # text_vector = tfidf_vectorizer.transform([text])
-    # course_vectors = course_vectorizer.transform(course_p_df['text'].astype(str))
-    # text_vector = course_vectorizer.transform([text])
-    # dists = 1-cosine_similarity(text_vector, course_vectors).flatten()
+    if not os.path.exists('pkl/course_vectorizer.pkl'):
+        course_vectorizer = TfidfVectorizer()
+        course_vectorizer.fit(course_p_df['text'].astype(str), ignore_index=True)
+        with open('pkl/course_vectorizer.pkl', 'wb') as f:
+            pickle.dump(course_vectorizer, f)
+    else:
+        with open('pkl/course_vectorizer.pkl', 'rb') as f:
+            course_vectorizer = pickle.load(f)
+    # course_vectors = tfidf_vectorizer.transform(course_p_df['text'].astype(str))
+    # text_vector = tfidf_vectorizer.transform([text])
+    course_vectors = course_vectorizer.transform(course_p_df['text'].astype(str))
+    text_vector = course_vectorizer.transform([text])
+    dists = 1-cosine_similarity(text_vector, course_vectors).flatten()
     
     
     # ST Method
-    if not os.path.exists('emb/st_courses_embeddings.pkl'):
-        st_courses_embeddings = st_model.encode(course_p_df['text'].astype(str))
-        with open('emb/st_courses_embeddings.pkl', 'wb') as f:
-            pickle.dump(st_courses_embeddings, f)
-    else:
-        with open('emb/st_courses_embeddings.pkl', 'rb') as f:
-            st_courses_embeddings = pickle.load(f)
-    text_vector_st = st_model.encode(text)
-    dists = 1-cosine_similarity([text_vector_st], st_courses_embeddings).flatten()
+    # if not os.path.exists('emb/st_courses_embeddings.pkl'):
+    #     st_courses_embeddings = st_model.encode(course_p_df['text'].astype(str))
+    #     with open('emb/st_courses_embeddings.pkl', 'wb') as f:
+    #         pickle.dump(st_courses_embeddings, f)
+    # else:
+    #     with open('emb/st_courses_embeddings.pkl', 'rb') as f:
+    #         st_courses_embeddings = pickle.load(f)
+    # text_vector_st = st_model.encode(text)
+    # dists = 1-cosine_similarity([text_vector_st], st_courses_embeddings).flatten()
     
     course_df_sorted = course_df.iloc[np.argsort(dists), :]
     top_n_courses = {}
@@ -249,4 +249,4 @@ def recommend_career(r:int, i:int, a:int, s:int, e:int, c:int, top_n:int = 3) ->
     
     return top_n_careers    
     
-print(json.dumps(recommend_career(0, 5, 0, 0, 5, 5)))
+print(json.dumps(recommend_career(r=0, i=5, a=0, s=0, e=5, c=5)))
