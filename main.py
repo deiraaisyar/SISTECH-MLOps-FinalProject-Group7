@@ -7,6 +7,8 @@ JOB_CSV_PATH = "preprocessed/linkedin_jobs.csv"
 JOB_INDEX_PATH = "app/jobs_tfidf.index"
 COURSE_CSV_PATH = "preprocessed/edx_courses.csv"
 COURSE_INDEX_PATH = "app/courses_tfidf.index"
+MAJOR_CSV_PATH = "preprocessed/major_final.csv"
+MAJOR_INDEX_PATH = "app/major_tfidf.index"
 
 app = FastAPI(title="Recommender")
 
@@ -29,13 +31,13 @@ class CareerQuery(BaseQuery):
 # Load index and model at startup
 jobs_df, job_model, job_index = dp.process_data(JOB_CSV_PATH, JOB_INDEX_PATH, "tfidf")
 courses_df, course_model, course_index = dp.process_data(COURSE_CSV_PATH, COURSE_INDEX_PATH, "tfidf")
+programs_df, program_model, program_index = dp.process_data(MAJOR_CSV_PATH, MAJOR_INDEX_PATH, "tfidf")
 
 
 @app.post("/recommend-careers")
 def recommend_careers(query: CareerQuery):
     results = rec.recommend_careers(r = query.r, i = query.i, a = query.a, s = query.s, e = query.e, c = query.c, top_n=query.top_n)
     return {"request_id": query.request_id, "recommendations": results}
-
 
 @app.post("/recommend-jobs")
 def recommend_jobs(query: TextQuery):
@@ -47,8 +49,11 @@ def recommend_courses(query: TextQuery):
     results = rec.recommend_courses(query.description, course_model, course_index, courses_df, top_n=query.top_n)
     return {"request_id": query.request_id, "recommendations": results}
 
+@app.post("/recommend-programs")
+def recommend_programs(query: TextQuery):
+    results = rec.recommend_programs(query.description, program_model, program_index, programs_df, top_n=query.top_n)
+    return {"request_id": query.request_id, "recommendations": results}
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
-
-# For local dev: run with 'uvicorn main:app --reload'

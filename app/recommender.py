@@ -164,3 +164,27 @@ def recommend_courses(career_text:str, model, index, course_df, top_n:int = 3) -
             "score": float(dist)
         })
     return results
+
+
+def recommend_programs(query_text: str, model, index, program_df, top_n: int = 3) -> dict:
+    if isinstance(model, SentenceTransformer):
+        query_emb = np.array(model.encode([query_text]))
+        query_emb = normalize(query_emb)
+    else:
+        query_emb = model.transform([query_text]).toarray()
+
+    D, I = index.search(query_emb, top_n)
+    results = []
+    for idx, dist in zip(I[0], D[0]):
+        program = program_df.iloc[idx]
+        results.append({
+            "university": program['Universitas'] if pd.notna(program['Universitas']) else '',
+            "program": program['Prodi'] if pd.notna(program['Prodi']) else '',
+            "rank": int(program['Rank']) if not pd.isna(program['Rank']) else '',
+            "text": program['text'] if pd.notna(program['text']) else '',
+            "score": float(dist)
+        })
+
+    # Sort results by rank (ascending order, higher rank is better)
+    results = sorted(results, key=lambda x: x['rank'])
+    return results
