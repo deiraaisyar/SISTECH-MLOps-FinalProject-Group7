@@ -219,10 +219,10 @@ def recommend_programs(query_text: str, model, index, program_data, top_n: int =
     return results
 
 
-def get_job_trends(query:str, top_n:int = 3) -> list:
+def get_job_articles(query:str, top_n:int = 3) -> list:
     """
-    Fetches job trends from Google Custom Search API based on the query.
-    
+    Fetches job articles from Google Custom Search API based on the query.
+
     Args:
         query (str): The search query for job trends.
         top_n (int): Number of top results to return.
