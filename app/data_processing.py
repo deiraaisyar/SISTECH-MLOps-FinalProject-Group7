@@ -7,6 +7,8 @@ import faiss
 import os
 import translators as ts
 import re
+import json
+import pickle
 
 def normalize(vectors):
     """
@@ -19,11 +21,18 @@ def normalize(vectors):
     """
     return vectors / np.linalg.norm(vectors, axis=1, keepdims=True)
 
-def load_data(input_path:str) -> pd.DataFrame:
+def load_csv(input_path:str) -> pd.DataFrame:
     """
     Load data from a CSV file.
     """
     return pd.read_csv(input_path)
+
+def load_json(input_path:str) -> dict:
+    """
+    Load data from a JSON file.
+    """
+    with open(input_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
 
 def generate_embeddings(texts: list, method: str) -> list:
     """
@@ -84,22 +93,68 @@ def translate_to_english(text: str) -> str:
     except Exception as e:
         print(f"Translation error: {e}")
         return text
+    
+def store_model(model, output_path: str):
+    """
+    Store the model to a file.
+    """
+    if isinstance(model, TfidfVectorizer):
+        with open(output_path, 'wb') as f:
+            pickle.dump(model, f)
+    elif isinstance(model, SentenceTransformer):
+        model.save(output_path)
+    else:
+        raise ValueError("Unsupported model type. Use 'tfidf' or 'sentence_transformers'.")
+    
+def load_model(input_path: str):
+    """
+    Load the model from a file.
+    """
+    if input_path.endswith('.pkl'):
+        with open(input_path, 'rb') as f:
+            return pickle.load(f)
+    elif os.path.isdir(input_path):
+        return SentenceTransformer(input_path)
+    else:
+        raise ValueError("Unsupported model file type. Use '.pkl' for TF-IDF or directory for Sentence Transformers.")
 
 # Update process_data to include translation
 def process_data(input_path:str, output_path:str, method:str):
-    df = load_data(input_path)
-    
-    df['text'] = df['text'].apply(translate_to_english)
+    if(input_path.endswith('.csv')):
+        data = load_csv(input_path)
+        text_list = data['text'].apply(translate_to_english).tolist()
+    elif(input_path.endswith('.json')):
+        data = load_json(input_path)
+        for entry in data:
+            entry['text'] = translate_to_english(entry['text'])
+        text_list = [entry['text'] for entry in data]
         
-    model, embeddings = generate_embeddings(df['text'].tolist(), method)
+    if os.path.exists(output_path):
+        index = load_faiss_index(output_path)
+        if method == 'tfidf':
+            model = load_model(output_path.replace('.index', '.pkl'))
+            print(model)
+        else:
+            model = load_model(output_path.replace('.index', ''))
+            print(model)
+        return data, model, index
+
+    model, embeddings = generate_embeddings(text_list, method)
+    if method == 'tfidf':
+        store_model(model, output_path.replace('.index', '.pkl'))
+    else:
+        store_model(model, output_path.replace('.index', ''))
     print(embeddings.shape)
     if method == 'sentence_transformers':
         embeddings = normalize(embeddings)
     index = build_faiss_index(embeddings)
     save_faiss_index(index, output_path)
-    return df, model, index
+    return data, model, index
 
 if __name__ == "__main__":
     process_data("preprocessed/linkedin_jobs.csv", "app/jobs_tfidf.index", "tfidf")
     process_data("preprocessed/edx_courses.csv", "app/courses_tfidf.index", "tfidf")
+    process_data("preprocessed/edx_courses.json", "app/courses_tfidf.index", "tfidf")
+    process_data("preprocessed/linkedin_jobs.json", "app/jobs_tfidf.index", "tfidf")
+    
     print("Data processed and FAISS index created.")

@@ -4,8 +4,10 @@ import app.data_processing as dp
 import app.recommender as rec
 
 JOB_CSV_PATH = "preprocessed/linkedin_jobs.csv"
+JOB_JSON_PATH = "preprocessed/linkedin_jobs.json"
 JOB_INDEX_PATH = "app/jobs_tfidf.index"
 COURSE_CSV_PATH = "preprocessed/edx_courses.csv"
+COURSE_JSON_PATH = "preprocessed/edx_courses.json"
 COURSE_INDEX_PATH = "app/courses_tfidf.index"
 MAJOR_CSV_PATH = "preprocessed/major_final.csv"
 MAJOR_INDEX_PATH = "app/major_tfidf.index"
@@ -14,7 +16,7 @@ app = FastAPI(title="Recommender")
 
 class BaseQuery(BaseModel):
     request_id: int = Field(..., description="Unique request ID", example=1234)
-    top_n: int = Field(5, description="Number of results to return", example=5)
+    top_n: int = Field(3, description="Number of results to return", example=3)
 
 class TextQuery(BaseQuery):
     description: str = Field(..., description="Free-form user input", example="Looking for a backend role.")
@@ -29,8 +31,11 @@ class CareerQuery(BaseQuery):
 
 
 # Load index and model at startup
-jobs_df, job_model, job_index = dp.process_data(JOB_CSV_PATH, JOB_INDEX_PATH, "tfidf")
-courses_df, course_model, course_index = dp.process_data(COURSE_CSV_PATH, COURSE_INDEX_PATH, "tfidf")
+# jobs_data, job_model, job_index = dp.process_data(JOB_CSV_PATH, JOB_INDEX_PATH, "tfidf")
+# courses_data, course_model, course_index = dp.process_data(COURSE_CSV_PATH, COURSE_INDEX_PATH, "tfidf")
+
+jobs_data, job_model, job_index = dp.process_data(JOB_JSON_PATH, JOB_INDEX_PATH, "tfidf")
+courses_data, course_model, course_index = dp.process_data(COURSE_JSON_PATH, COURSE_INDEX_PATH, "tfidf")
 programs_df, program_model, program_index = dp.process_data(MAJOR_CSV_PATH, MAJOR_INDEX_PATH, "tfidf")
 
 
@@ -41,17 +46,22 @@ def recommend_careers(query: CareerQuery):
 
 @app.post("/recommend-jobs")
 def recommend_jobs(query: TextQuery):
-    results = rec.recommend_jobs(query.description, job_model, job_index, jobs_df, top_n=query.top_n)
+    results = rec.recommend_jobs(query.description, job_model, job_index, jobs_data, top_n=query.top_n)
     return {"request_id": query.request_id, "recommendations": results}
 
 @app.post("/recommend-courses")
 def recommend_courses(query: TextQuery):
-    results = rec.recommend_courses(query.description, course_model, course_index, courses_df, top_n=query.top_n)
+    results = rec.recommend_courses(query.description, course_model, course_index, courses_data, top_n=query.top_n)
     return {"request_id": query.request_id, "recommendations": results}
 
 @app.post("/recommend-programs")
 def recommend_programs(query: TextQuery):
     results = rec.recommend_programs(query.description, program_model, program_index, programs_df, top_n=query.top_n)
+    return {"request_id": query.request_id, "recommendations": results}
+
+@app.post("/get-job-trends")
+def get_job_trends(query: TextQuery):
+    results = rec.get_job_trends(query.description, top_n=query.top_n)
     return {"request_id": query.request_id, "recommendations": results}
 
 @app.get("/health")
