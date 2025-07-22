@@ -19,8 +19,7 @@ class BaseQuery(BaseModel):
     top_n: int = Field(3, description="Number of results to return", example=3)
 
 class TextQuery(BaseQuery):
-    article_query: str = Field(..., description="Job trends query", example="Data Science trends 2025")
-    query: str = Field(..., description="Input is from career recommendation's text")
+    query: str = Field(..., description="Input is from career recommendation's preprocessed_text or career recommendation's title")
 
 class CareerQuery(BaseQuery):
     r: int = Field(..., description="Realistic score", example=5)
@@ -62,7 +61,7 @@ def recommend_programs(query: TextQuery):
 
 @app.post("/get-job-articles")
 def get_job_articles(query: TextQuery):
-    results = rec.get_job_articles(query.article_query, top_n=query.top_n)
+    results = rec.get_job_articles(query.query, top_n=query.top_n)
     return {"request_id": query.request_id, "articles": results}
 
 @app.get("/health")

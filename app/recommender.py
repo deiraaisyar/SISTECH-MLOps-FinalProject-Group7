@@ -141,7 +141,7 @@ def recommend_jobs(career_text:str, model, index, job_data, top_n:int = 3) -> di
 
 
 
-def recommend_courses(career_text:str, model, index, course_data, top_n:int = 3) -> dict:    
+def recommend_courses(career_text:str, model, index, course_data, top_n:int = 3) -> dict:  
     if isinstance(model, SentenceTransformer):
         query_emb = np.array(model.encode([career_text]))
         query_emb = normalize(query_emb)
@@ -232,6 +232,8 @@ def get_job_articles(query:str, top_n:int = 3) -> list:
     """
     # Load environment variables
     dotenv.load_dotenv()
+    
+    query = query + " career outlook OR employment trends OR job market OR future demand OR career forecast"
 
     api_key = os.getenv('GOOGLE_API_KEY')
     search_id = os.getenv('SEARCH_ENGINE_ID')

@@ -122,11 +122,11 @@ def load_model(input_path: str):
 def process_data(input_path:str, output_path:str, method:str):
     if(input_path.endswith('.csv')):
         data = load_csv(input_path)
-        text_list = data['text'].apply(translate_to_english).tolist()
+        text_list = data['text'].tolist()
     elif(input_path.endswith('.json')):
         data = load_json(input_path)
-        for entry in data:
-            entry['text'] = translate_to_english(entry['text'])
+        # for entry in data:
+        #     entry['text'] = translate_to_english(entry['text'])
         text_list = [entry['text'] for entry in data]
         
     if os.path.exists(output_path):
