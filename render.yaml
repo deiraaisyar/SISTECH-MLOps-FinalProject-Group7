@@ -3,7 +3,11 @@ services:
     name: mlops-finalproject-group7
     env: python
     region: oregon 
-    buildCommand: "pip install -r requirements.txt"
+    pythonVersion: 3.10 
+    buildCommand: |
+      curl https://sh.rustup.rs -sSf | sh -s -- -y
+      source $HOME/.cargo/env
+      pip install --prefer-binary -r requirements.txt
     startCommand: "uvicorn main:app --host 0.0.0.0 --port 8000"
     plan: free
     envVars:
@@ -14,4 +18,4 @@ services:
       - key: GOOGLE_API_KEY
         value: AIzaSyCWlrgzgKeaE0yfC0dHFcSreVmfEHp3q2o
       - key: SEARCH_ENGINE_ID
-        value: 34649d7af03e44383
+        value: 34649d7af03e44383  
