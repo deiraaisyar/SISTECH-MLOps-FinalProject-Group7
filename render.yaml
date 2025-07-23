@@ -6,7 +6,6 @@ services:
     buildCommand: "pip install -r requirements.txt"
     startCommand: "uvicorn main:app --host 0.0.0.0 --port 8000"
     plan: free
-    pythonVersion: 3.9
     envVars:
       - key: ONET_USERNAME
         value: career_recommendatio6
@@ -16,5 +15,3 @@ services:
         value: AIzaSyCWlrgzgKeaE0yfC0dHFcSreVmfEHp3q2o
       - key: SEARCH_ENGINE_ID
         value: 34649d7af03e44383
-
-blueprintName: mlops-finalproject-group7
