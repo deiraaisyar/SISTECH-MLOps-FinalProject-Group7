@@ -11,8 +11,8 @@ scikit-learn>=1.0.0
 nltk>=3.5
 langdetect>=1.0.9
 deep-translator==1.11.4
-translate>=3.6.1
-sentence-transformers==5.2.1
+translate==3.5.0
+sentence-transformers==2.2.2
 
 # Web scraping
 beautifulsoup4>=4.10.0
