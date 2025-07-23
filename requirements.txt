@@ -3,3 +3,5 @@ requests>=2.0
 translate
 langdetect
 deep-translator==1.11.4
+sentence-transformers==5.2.1
+
