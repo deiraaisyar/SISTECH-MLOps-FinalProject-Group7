@@ -12,211 +12,270 @@ import os
 import dotenv
 
 
-def recommend_careers(r:int, i:int, a:int, s:int, e:int, c:int, top_n:int = 3) -> dict:    
+def recommend_careers(r: int, i: int, a: int, s: int, e: int, c: int, top_n: int = 5) -> list:
     url = f"https://services.onetcenter.org/ws/mnm/interestprofiler/careers?Realistic={r}&Investigative={i}&Artistic={a}&Social={s}&Enterprising={e}&Conventional={c}"
     
     load_dotenv()
-    headers={'User-Agent': 'python-OnetWebService/1.00 (bot)',
-            'Authorization': 'Basic ' + base64.standard_b64encode((os.getenv('ONET_USERNAME') + ':' + os.getenv('ONET_PASSWORD')).encode()).decode(),
-            'Accept': 'application/json' }
+    headers = {
+        'User-Agent': 'python-OnetWebService/1.00 (bot)',
+        'Authorization': 'Basic ' + base64.standard_b64encode((os.getenv('ONET_USERNAME') + ':' + os.getenv('ONET_PASSWORD')).encode()).decode(),
+        'Accept': 'application/json'
+    }
     
+    # Fetch career data
     r = requests.get(url, headers=headers)
     if r.status_code != 200:
         raise Exception(f"Error fetching data from O*NET: {r.status_code} - {r.text}")
     
     data = r.json()
+    careers = data.get('career', [])
     
-    top_n_careers = []
-    
-    for career in data['career'][:top_n]:
-        report_url = f"https://services.onetcenter.org/ws/mnm/careers/{career['code']}/report"
-        r = requests.get(report_url, headers=headers)
-        if r.status_code != 200:
-            raise Exception(f"Error fetching career report: {r.status_code} - {r.text}")
-        print("Successfully fetched career report for:", career['code'])
-        report_data = r.json()
-        code = report_data.get('career', {}).get('code', '')
-        title = report_data.get('career', {}).get('title', '')
-        also_called = ", ".join(report_data.get('career', {}).get('also_called', {}).get('title', []))
-        what_they_do = report_data.get('career', {}).get('what_they_do', '')
-        on_the_job = ", ".join(report_data.get('career', {}).get('on_the_job', {}).get('task', []))
-
-        
-        c_knowledges = []
-        knowledges = report_data.get('knowledge', {}).get('group', [])
-
-        for knowledge in knowledges:
-            c_knowledges.append(knowledge['title']['name'])
-            elements = knowledge['element']
-            for element in elements:
-                c_knowledges.append(element['name'])
-        
-        c_abilities = []
-        abilities = report_data.get('abilities', {}).get('group', [])
-
-        for ability in abilities:
-            c_abilities.append(ability['title']['name'])
-            elements = ability['element']
-            for element in elements:
-                c_abilities.append(element['name'])
-                
-        c_skills = []
-        skills = report_data.get('skills', {}).get('group', [])
-
-        for skill in skills:
-            c_skills.append(skill['title']['name'])
-            elements = skill['element']
-            for element in elements:
-                c_skills.append(element['name'])
-                
-        c_technologies = []
-        technologies = report_data.get('technology', {}).get('category', [])
-
-        for tech in technologies:
-            c_technologies.append(tech['title']['name'])
-            examples = tech['example']
-            for ex in examples:
-                c_technologies.append(ex['name'])
-
-        outlook = report_data.get('job_outlook', {}).get('outlook', '')
-
-        title_preprocessed = preprocessing(title)
-        also_called_preprocessed = preprocessing(also_called)
-        what_they_do_preprocessed = preprocessing(what_they_do)
-        on_the_job_preprocessed = preprocessing(on_the_job)
-        # c_knowledges_preprocessed = " ".join([preprocessing(k) for k in c_knowledges])
-        # c_skills_preprocessed = " ".join([preprocessing(s) for s in c_skills])
-        # c_abilities_preprocessed = " ".join([preprocessing(a) for a in c_abilities])
-        preprocessed_text = title_preprocessed + " " + also_called_preprocessed + " " + what_they_do_preprocessed + " " + on_the_job_preprocessed
-        
-        top_n_careers.append({
-            'code': code,
-            'title': title,
-            'also_called': also_called,
-            'what_they_do': what_they_do,
-            'on_the_job': on_the_job,
-            'knowledges': c_knowledges,
-            'skills': c_skills,
-            'abilities': c_abilities,
-            'outlook': outlook,
-            'preprocessed_text': preprocessed_text,
-        })
-        
-    return top_n_careers
-
-
-
-def recommend_jobs(career_text:str, model, index, job_data, top_n:int = 3) -> dict:    
-    if isinstance(model, SentenceTransformer):
-        query_emb = np.array(model.encode([career_text]))
-        query_emb = normalize(query_emb)
-    else:
-        query_emb = model.transform([career_text]).toarray()
-    
-    D, I = index.search(query_emb, top_n)
-    print(I)
     results = []
+    for career in careers[:top_n]:
+        try:
+            # Fetch detailed career report
+            report_url = f"https://services.onetcenter.org/ws/mnm/careers/{career['code']}/report"
+            report_response = requests.get(report_url, headers=headers)
+            if report_response.status_code != 200:
+                raise Exception(f"Error fetching career report: {report_response.status_code} - {report_response.text}")
+            
+            report_data = report_response.json()
+            code = report_data.get('career', {}).get('code', 'N/A')
+            title = report_data.get('career', {}).get('title', 'Unknown Title')
+            also_called = ", ".join(report_data.get('career', {}).get('also_called', {}).get('title', []))
+            what_they_do = report_data.get('career', {}).get('what_they_do', 'N/A')
+            on_the_job = ", ".join(report_data.get('career', {}).get('on_the_job', {}).get('task', []))
+            
+            # Process knowledges
+            c_knowledges = []
+            for knowledge in report_data.get('knowledge', {}).get('group', []):
+                c_knowledges.append(knowledge['title']['name'])
+                for element in knowledge.get('element', []):
+                    c_knowledges.append(element['name'])
+            
+            # Process skills
+            c_skills = []
+            for skill in report_data.get('skills', {}).get('group', []):
+                c_skills.append(skill['title']['name'])
+                for element in skill.get('element', []):
+                    c_skills.append(element['name'])
+            
+            # Process abilities
+            c_abilities = []
+            for ability in report_data.get('abilities', {}).get('group', []):
+                c_abilities.append(ability['title']['name'])
+                for element in ability.get('element', []):
+                    c_abilities.append(element['name'])
+            
+            # Process technologies
+            c_technologies = []
+            for tech in report_data.get('technology', {}).get('category', []):
+                c_technologies.append(tech['title']['name'])
+                for example in tech.get('example', []):
+                    c_technologies.append(example['name'])
+            
+            # Job outlook
+            outlook = report_data.get('job_outlook', {}).get('outlook', 'N/A')
+            
+            # Preprocess text for TF-IDF or embeddings
+            title_preprocessed = preprocessing(title)
+            also_called_preprocessed = preprocessing(also_called)
+            what_they_do_preprocessed = preprocessing(what_they_do)
+            on_the_job_preprocessed = preprocessing(on_the_job)
+            preprocessed_text = f"{title_preprocessed} {also_called_preprocessed} {what_they_do_preprocessed} {on_the_job_preprocessed}"
+            
+            # Append to results
+            results.append({
+                'code': code,
+                'title': title,
+                'also_called': also_called,
+                'what_they_do': what_they_do,
+                'on_the_job': on_the_job,
+                'knowledges': c_knowledges,
+                'skills': c_skills,
+                'abilities': c_abilities,
+                'technologies': c_technologies,
+                'outlook': outlook,
+                'preprocessed_text': preprocessed_text
+            })
+        except Exception as e:
+            print(f"Error processing career data for {career.get('code', 'N/A')}: {e}")
+            continue
     
-    
-    for idx, dist in zip(I[0], D[0]):
-        job = job_data[idx]
-        results.append({
-            "link": job.get('job_link', ''),
-            "title": job.get('job_title', ''),
-            "company_name": job.get('company_name', ''),
-            "location": job.get('location', ''),
-            "responsibilities": job.get('responsibilities', ''),
-            "requirements": job.get('requirements', ''),
-            "level": job.get('level', ''),
-            "employment_type": job.get('employment_type', ''),
-            "function": job.get('job_function', ''),
-            "industries": job.get('industries', ''),
-            "time_posted": job.get('time_posted', ''),
-            "num_applicants": job.get('num_applicants', ''),
-            "score": float(dist)
-        })
-    level = ['Internship', 'Entry level', 'Associate', 'Mid-Senior level', 'Director', 'Executive']
-    results_sorted = sorted(results, key=lambda x: (level.index(x['level']) if x['level'] in level else len(level), x['score']))
-    return results_sorted
-
-
-
-def recommend_courses(career_text:str, model, index, course_data, top_n:int = 3) -> dict:  
-    if isinstance(model, SentenceTransformer):
-        query_emb = np.array(model.encode([career_text]))
-        query_emb = normalize(query_emb)
-    else:
-        query_emb = model.transform([career_text]).toarray()
-
-    D, I = index.search(query_emb, index.ntotal)
-    top_courses = []
-    top_programs = []
-
-    for idx, dist in zip(I[0], D[0]):
-        course = course_data[idx]
-        product_type = course.get('product', '')
-        program_type = course.get('program_type', '')
-
-        result = {
-            "title": course.get('title', ''),
-            "partner": course.get('partner', ''),
-            "primary_description": course.get('primary_description', ''),
-            "secondary_description": course.get('secondary_description', ''),
-            "tertiary_description": course.get('tertiary_description', ''),
-            "availability": course.get('availability', ''),
-            "subject": course.get('subject', ''),
-            "level": course.get('level', ''),
-            "language": course.get('language', ''),
-            "product": product_type,
-            "program_type": program_type,
-            "staff": course.get('staff', ''),
-            "translation_language": course.get('translation_language', ''),
-            "transcription_language": course.get('transcription_language', ''),
-            "recent_enrollment_count": int(course['recent_enrollment_count']) if course.get('recent_enrollment_count') not in [None, ''] else '',
-            "marketing_url": course.get('marketing_url', ''),
-            "weeks_to_complete": int(course['weeks_to_complete']) if course.get('weeks_to_complete') not in [None, ''] else '',
-            "skill": course.get('skill', ''),
-            "score": float(dist)
-        }
-
-        if product_type == "Course" and len(top_courses) < top_n:
-            top_courses.append(result)
-        elif product_type == "Program" and "Professional Certificate" in program_type and len(top_programs) < top_n:
-            top_programs.append(result)
-
-        
-        if len(top_courses) == top_n and len(top_programs) == top_n:
-            break
-
-    results = {
-        "courses": top_courses,
-        "certifications": top_programs
-    }
-
     return results
 
-def recommend_programs(query_text: str, model, index, program_data, top_n: int = 3) -> dict:
-    if isinstance(model, SentenceTransformer):
+def recommend_jobs(query_text: str, model, job_data, top_n: int = 5) -> list:
+    # Validate job_data type
+    if isinstance(job_data, pd.DataFrame):
+        job_data = job_data.to_dict(orient="records")  # Convert DataFrame to list of dict
+    
+    print(f"Query text: {query_text}")
+    try:
         query_emb = np.array(model.encode([query_text]))
+        print(f"Query embedding shape: {query_emb.shape}")
         query_emb = normalize(query_emb)
-    else:
-        query_emb = model.transform([query_text]).toarray()
+    except Exception as e:
+        print(f"Error generating embedding: {e}")
+        raise
 
-    D, I = index.search(query_emb, top_n)
+    try:
+        corpus = [item['job_title'] for item in job_data]
+        corpus_emb = np.array(model.encode(corpus))
+        corpus_emb = normalize(corpus_emb)
+        print(f"Corpus embedding shape: {corpus_emb.shape}")
+    except Exception as e:
+        print(f"Error generating corpus embeddings: {e}")
+        raise
+
+    try:
+        similarities = np.dot(corpus_emb, query_emb.T).flatten()
+        print(f"Similarities: {similarities}")
+    except Exception as e:
+        print(f"Error calculating similarities: {e}")
+        raise
+
     results = []
-    for idx, dist in zip(I[0], D[0]):
-        program = program_data.iloc[idx] if isinstance(program_data, pd.DataFrame) else program_data[idx]
-        results.append({
-            "university": program['Universitas'] if pd.notna(program['Universitas']) else '',
-            "program": program['Prodi'] if pd.notna(program['Prodi']) else '',
-            "rank": int(program['Rank']) if not pd.isna(program['Rank']) else '',
-            "text": program['text'] if pd.notna(program['text']) else '',
-            "score": float(dist)
-        })
+    for idx, sim in enumerate(similarities):
+        try:
+            job = job_data[idx]
+            results.append({
+                "link": job.get('job_link', ''),
+                "title": job.get('job_title', ''),
+                "company_name": job.get('company_name', ''),
+                "location": job.get('location', ''),
+                "responsibilities": job.get('responsibilities', ''),
+                "requirements": job.get('requirements', ''),
+                "level": job.get('level', ''),
+                "employment_type": job.get('employment_type', ''),
+                "function": job.get('job_function', ''),
+                "industries": job.get('industries', ''),
+                "time_posted": job.get('time_posted', ''),
+                "num_applicants": int(float(job['num_applicants'])) if job.get('num_applicants') not in [None, ''] else '',
+                "score": float(sim)
+            })
+        except Exception as e:
+            print(f"Error processing job data at index {idx}: {e}")
+            raise
 
-    # Sort results by rank (ascending order, higher rank is better)
-    results = sorted(results, key=lambda x: x['rank'])
-    return results
+    sorted_results = sorted(results, key=lambda x: x['score'], reverse=True)
+    print(f"Sorted results: {sorted_results}")
+    return sorted_results[:top_n]
+
+
+def recommend_courses(query_text: str, model, course_data, top_n: int = 5) -> list:
+    # Validate course_data type
+    if isinstance(course_data, pd.DataFrame):
+        course_data = course_data.to_dict(orient="records")  # Convert DataFrame to list of dict
+    
+    print(f"Query text: {query_text}")
+    try:
+        query_emb = np.array(model.encode([query_text]))
+        print(f"Query embedding shape: {query_emb.shape}")
+        query_emb = normalize(query_emb)
+    except Exception as e:
+        print(f"Error generating embedding: {e}")
+        raise
+
+    try:
+        corpus = [item['title'] for item in course_data]
+        corpus_emb = np.array(model.encode(corpus))
+        corpus_emb = normalize(corpus_emb)
+        print(f"Corpus embedding shape: {corpus_emb.shape}")
+    except Exception as e:
+        print(f"Error generating corpus embeddings: {e}")
+        raise
+
+    try:
+        similarities = np.dot(corpus_emb, query_emb.T).flatten()
+        print(f"Similarities: {similarities}")
+    except Exception as e:
+        print(f"Error calculating similarities: {e}")
+        raise
+
+    results = []
+    for idx, sim in enumerate(similarities):
+        try:
+            course = course_data[idx]
+            results.append({
+                "title": course.get('title', ''),
+                "partner": course.get('partner', ''),
+                "primary_description": course.get('primary_description', ''),
+                "secondary_description": course.get('secondary_description', ''),
+                "tertiary_description": course.get('tertiary_description', ''),
+                "availability": course.get('availability', ''),
+                "subject": course.get('subject', ''),
+                "level": course.get('level', ''),
+                "language": course.get('language', ''),
+                "product": course.get('product', ''),
+                "program_type": course.get('program_type', ''),
+                "staff": course.get('staff', ''),
+                "translation_language": course.get('translation_language', ''),
+                "transcription_language": course.get('transcription_language', ''),
+                "recent_enrollment_count": int(float(course['recent_enrollment_count'])) if course.get('recent_enrollment_count') not in [None, ''] else '',
+                "marketing_url": course.get('marketing_url', ''),
+                "weeks_to_complete": int(float(course['weeks_to_complete'])) if course.get('weeks_to_complete') not in [None, ''] else '',
+                "skill": course.get('skill', ''),
+                "score": float(sim)
+            })
+        except Exception as e:
+            print(f"Error processing course data at index {idx}: {e}")
+            raise
+
+    sorted_results = sorted(results, key=lambda x: x['score'], reverse=True)
+    print(f"Sorted results: {sorted_results}")
+    return sorted_results[:top_n]
+
+
+def recommend_programs(query_text: str, model, program_data, top_n: int = 5) -> list:
+    # Validate program_data type
+    if isinstance(program_data, pd.DataFrame):
+        program_data = program_data.to_dict(orient="records")  # Convert DataFrame to list of dict
+    
+    print(f"Query text: {query_text}")
+    try:
+        query_emb = np.array(model.encode([query_text]))
+        print(f"Query embedding shape: {query_emb.shape}")
+        query_emb = normalize(query_emb)
+    except Exception as e:
+        print(f"Error generating embedding: {e}")
+        raise
+
+    try:
+        corpus = [item['text'] for item in program_data]
+        corpus_emb = np.array(model.encode(corpus))
+        corpus_emb = normalize(corpus_emb)
+        print(f"Corpus embedding shape: {corpus_emb.shape}")
+    except Exception as e:
+        print(f"Error generating corpus embeddings: {e}")
+        raise
+
+    try:
+        similarities = np.dot(corpus_emb, query_emb.T).flatten()
+        print(f"Similarities: {similarities}")
+    except Exception as e:
+        print(f"Error calculating similarities: {e}")
+        raise
+
+    results = []
+    for idx, sim in enumerate(similarities):
+        try:
+            program = program_data[idx]
+            rank = int(float(program.get('Rank', 999)))  # Default rank is 999 if not provided
+            composite_score = 0.5 * ((999 - rank) / 999) + 0.5 * sim
+            results.append({
+                'program': program.get('Prodi', ''),
+                'university': program.get('Universitas', ''),
+                'rank': rank,
+                'similarity': float(sim),
+                'composite_score': float(composite_score)
+            })
+        except Exception as e:
+            print(f"Error processing program data at index {idx}: {e}")
+            raise
+
+    sorted_results = sorted(results, key=lambda x: x['composite_score'], reverse=True)
+    print(f"Sorted results: {sorted_results}")
+    return sorted_results[:top_n]
 
 
 def get_job_articles(query:str, top_n:int = 3) -> list:
