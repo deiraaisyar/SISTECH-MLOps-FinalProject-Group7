@@ -12,7 +12,31 @@ This project builds a comprehensive recommendation engine designed to guide user
 - Career outlook & articles
 
 ---
-## Scraping Methods
+## Scraping Methods & Data Sources
+
+The scraping methods in this project involve collecting data from various online sources to build a comprehensive dataset for recommendations. The key scraping processes include:
+
+1. **Job Data**:
+   - Source: LinkedIn Job API
+   - Method: Web scraping using tools like BeautifulSoup and Selenium to extract job postings, descriptions, and requirements.
+
+2. **Course Data**:
+   - Source: edX API
+   - Method: API integration and web scraping to gather course details, including titles, descriptions, and learning outcomes.
+
+3. **University Majors**:
+   - Source: BAN-PT and QS World University Rankings 2026
+   - Method: Scraping major offerings, program details, and rankings.
+
+4. **Career Articles**:
+   - Source: Google Custom Search API
+   - Method: Fetching articles related to career trends, job market outlook, and employment forecasts.
+
+5. **Career Data**:
+   - Source: O*NET Online
+   - Method: API integration to fetch career data, including job descriptions, required skills, and career outlooks based on RIASEC scores.
+
+These scraping methods ensure that the dataset remains up-to-date and relevant for generating accurate recommendations.
 
 ---
 ## Vectorization
@@ -24,6 +48,14 @@ The vectorization process in this project uses Sentence Transformers, a state-of
 
 ---
 ## Vector Database
+
+The vector database in this project is implemented using FAISS (Facebook AI Similarity Search), a library designed for efficient similarity search and clustering of dense vectors. It is used to store and retrieve vectorized representations of text data, enabling fast and accurate similarity calculations. The key features include:
+
+1. **Indexing**: The dense vector representations generated during the vectorization process are stored in a FAISS index. This index allows for efficient similarity searches using methods like cosine similarity.
+2. **Storage**: The FAISS index is saved to disk, ensuring that it can be quickly loaded and reused without the need to recompute embeddings.
+3. **Scalability**: FAISS is optimized for handling large-scale datasets, making it suitable for this project's diverse and extensive data sources.
+
+By leveraging FAISS, the system ensures that recommendations are generated quickly and accurately, even when dealing with large volumes of data.
 
 ---
 ## Similarity
@@ -40,21 +72,56 @@ The similarity calculation in this project is based on cosine similarity, a metr
 
 ---
 ## API
+1. O*NET Web Services API:
+
+Used for career recommendations based on RIASEC scores.
+
+Endpoints:
+- /ws/mnm/interestprofiler/careers: Fetches careers matching the RIASEC scores.
+- /ws/mnm/careers/{career_code}/report: Retrieves detailed reports for specific careers.
+- Requires authentication using a username and password, encoded in the request headers.
+
+2. Google Custom Search API:
+
+Used to fetch job-related articles and trends.
+
+Endpoint:
+- /customsearch/v1: Searches for articles based on a query string.
+
+Requires an API key and a search engine ID for authentication.
 
 ---
-## Endpoints
-- '/recommend-careers: http://127.0.0.1:8000/recommend-careers
-Accepts RIASEC scores and returns career recommendations.
-- /recommend-jobs: http://127.0.0.1:8000/recommend-jobs
-Accepts a query string and returns job recommendations.
-- /recommend-courses: http://127.0.0.1:8000/recommend-courses
-Accepts a query string and returns course recommendations.
-- /recommend-programs: http://127.0.0.1:8000/recommend-programs
-Accepts a query string and returns university major or program recommendations.
-- /get-job-articles: http://127.0.0.1:8000/get-job-articles
-Accepts a query string and returns job-related articles.
-- /health: http://127.0.0.1:8000/health
-A health check endpoint to verify the API is running.
+## Running the Application
+
+To run the application, use the following command:
+
+```bash
+uvicorn main:app --reload
+```
+
+This will start the FastAPI application and make it accessible at `http://127.0.0.1:8000`.
+
+## Testing the Endpoints
+
+Once the application is running, you can test the following endpoints:
+
+- **`/recommend-careers`**: Accepts RIASEC scores and returns career recommendations.
+  - Example: `http://127.0.0.1:8000/recommend-careers`
+
+- **`/recommend-jobs`**: Accepts a query string and returns job recommendations.
+  - Example: `http://127.0.0.1:8000/recommend-jobs`
+
+- **`/recommend-courses`**: Accepts a query string and returns course recommendations.
+  - Example: `http://127.0.0.1:8000/recommend-courses`
+
+- **`/recommend-programs`**: Accepts a query string and returns university major or program recommendations.
+  - Example: `http://127.0.0.1:8000/recommend-programs`
+
+- **`/get-job-articles`**: Accepts a query string and returns job-related articles.
+  - Example: `http://127.0.0.1:8000/get-job-articles`
+
+- **`/health`**: A health check endpoint to verify the API is running.
+  - Example: `http://127.0.0.1:8000/health`
 
 ---
 ## Evaluation
