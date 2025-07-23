@@ -2,5 +2,5 @@ services:
   - type: web
     name: mlops-finalproject-group7
     env: docker
-    region: oregon
+    region: singapore
     plan: free

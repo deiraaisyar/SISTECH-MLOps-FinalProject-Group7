@@ -1,0 +1,50 @@
+{
+    "request_id": 1,
+    "recommendations": [
+        {
+            "link": "https://id.linkedin.com/jobs/view/software-engineer-at-stickearn-4258683417",
+            "title": "Software Engineer",
+            "company_name": "StickEarn",
+            "location": "Gambir, Jakarta, Indonesia",
+            "responsibilities": "['Participate in the overall system and product design to ensure scalable and maintainable architecture.', 'Develop and maintain both new and existing products using modern frameworks such as PHP 8.2 with Laravel 9 or Node.js 16 with Adonis 5.0.', 'Develop APIs for frontend Vue.js and for internal service purposes.', 'Build products with maintainable, extensible, and scalable codes.', 'Follow existing, further develop, or propose new software design patterns to improve team-wide development processes.', 'Continuously explore, evaluate, and implement new technologies to enhance development efficiency and product quality.']",
+            "requirements": "['Bachelor’s degree in Information Technology, Computer Science, or a related field.', 'Minimum 1 year of professional experience as a Software Engineer or Programmer.', 'Proficiency in PHP (Laravel) or Node.js (AdonisJS) frameworks.', 'Strong experience with MySQL, including crafting performant queries and database design.', 'Solid understanding of Object-Oriented Programming (OOP) and SOLID principles.', 'Familiar with frontend technologies, especially Vue.js and general CSS (preferred but not mandatory).', 'Experience using development tools such as Jira, Bitbucket, and working with Git Feature Branch Workflow.', 'Familiarity with Google Cloud Platform (GCP) products such as GCE, Cloud Storage, Drive, etc.', 'Self-driven, independent, and committed to writing clean, readable, and maintainable code.']",
+            "level": "Associate",
+            "employment_type": "Full-time",
+            "function": "Other",
+            "industries": "Advertising Services",
+            "time_posted": "2 weeks ago",
+            "num_applicants": 109,
+            "score": 1.0000001192092896
+        },
+        {
+            "link": "https://id.linkedin.com/jobs/view/head-of-software-engineering-at-kawan-lama-group-4250316795",
+            "title": "Head of Software Engineering",
+            "company_name": "Kawan Lama Group",
+            "location": "West Jakarta, Jakarta, Indonesia",
+            "responsibilities": "[\"Define and lead the company's long-term technology strategy.\", 'Identify and evaluate new technologies to maintain a competitive edge.', 'Collaborate with executive leadership to align tech initiatives with business goals.']",
+            "requirements": "['Build, lead, and mentor high-performing engineering and IT teams.', 'Establish best practices in software development, DevOps, and cybersecurity.', 'Foster a culture of innovation, continuous improvement, and accountability.']",
+            "level": "Director",
+            "employment_type": "Full-time",
+            "function": "Information Technology and Strategy/Planning",
+            "industries": "Manufacturing, Retail, and IT Services and IT Consulting",
+            "time_posted": "4 weeks ago",
+            "num_applicants": null,
+            "score": 0.8363343477249146
+        },
+        {
+            "link": "https://id.linkedin.com/jobs/view/project-engineer-at-pt-enha-duta-econsindo-4263013131",
+            "title": "Project Engineer",
+            "company_name": "PT ENHA DUTA ECONSINDO",
+            "location": "Greater Surabaya",
+            "responsibilities": "",
+            "requirements": "",
+            "level": "Entry level",
+            "employment_type": "Full-time",
+            "function": "Engineering and Information Technology",
+            "industries": "Civil Engineering",
+            "time_posted": "1 week ago",
+            "num_applicants": 158,
+            "score": 0.7647864818572998
+        }
+    ]
+}

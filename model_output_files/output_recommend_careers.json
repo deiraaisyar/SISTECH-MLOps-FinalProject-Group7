@@ -1,0 +1,168 @@
+{
+    "request_id": 1,
+    "recommendations": [
+        {
+            "code": "17-1012.00",
+            "title": "Landscape Architects",
+            "also_called": "Golf Course Architect, Land Planner, Landscape Architect, Landscape Planner",
+            "what_they_do": "Plan and design land areas for projects such as parks and other recreational facilities, airports, highways, hospitals, schools, land subdivisions, and commercial, industrial, and residential sites.",
+            "on_the_job": "Prepare graphic representations or drawings of proposed plans or designs., Confer with clients, engineering personnel, or architects on landscape projects., Integrate existing land features or landscaping into designs.",
+            "knowledges": [
+                "Engineering and Technology",
+                "design",
+                "building and construction",
+                "Safety and Government",
+                "public safety and security",
+                "law and government",
+                "Arts and Humanities",
+                "English language",
+                "music, dance, visual arts, drama, or sculpture",
+                "Business",
+                "customer service"
+            ],
+            "skills": [
+                "Basic Skills",
+                "listening to others, not interrupting, and asking good questions",
+                "reading work related information",
+                "Problem Solving",
+                "noticing a problem and figuring out the best way to solve it",
+                "People and Technology Systems",
+                "thinking about the pros and cons of different options and picking the best one",
+                "figuring out how a system should work and how changes in the future will affect it"
+            ],
+            "abilities": [
+                "Verbal",
+                "communicate by speaking",
+                "listen and understand what people say",
+                "Ideas and Logic",
+                "create new and original ideas",
+                "group things in different ways",
+                "Attention",
+                "pay attention to something without being distracted"
+            ],
+            "technologies": [
+                "Computer aided design CAD software",
+                "Autodesk AutoCAD Civil 3D",
+                "Trimble SketchUp Pro",
+                "Presentation software",
+                "Microsoft PowerPoint",
+                "Graphics or photo imaging software",
+                "Adobe Creative Cloud software",
+                "Adobe Illustrator"
+            ],
+            "outlook": {
+                "description": "New job opportunities are likely in the future.",
+                "category": "Average"
+            },
+            "preprocessed_text": "landscape architect golf course architect land planner landscape architect landscape planner plan design land area project park recreational facility airport highway hospital school land subdivision commercial industrial residential site prepare graphic representation drawing proposed plan design confer client engineering personnel architect landscape project integrate existing land feature landscaping design"
+        },
+        {
+            "code": "19-1011.00",
+            "title": "Animal Scientists",
+            "also_called": "Animal Nutritionist, Animal Scientist, Beef Cattle Nutritionist, Research Scientist",
+            "what_they_do": "Conduct research in the genetics, nutrition, reproduction, growth, and development of domestic farm animals.",
+            "on_the_job": "Study nutritional requirements of animals and nutritive values of animal feed materials., Write up or orally communicate research findings to the scientific community, producers, and the public., Develop improved practices in feeding, housing, sanitation, or parasite and disease control of animals.",
+            "knowledges": [
+                "Math and Science",
+                "biology",
+                "arithmetic, algebra, geometry, calculus, or statistics",
+                "Arts and Humanities",
+                "English language",
+                "Manufactured or Agricultural Goods",
+                "food production",
+                "Education and Training",
+                "teaching and course design"
+            ],
+            "skills": [
+                "Basic Skills",
+                "reading work related information",
+                "thinking about the pros and cons of different ways to solve a problem",
+                "Problem Solving",
+                "noticing a problem and figuring out the best way to solve it",
+                "People and Technology Systems",
+                "thinking about the pros and cons of different options and picking the best one",
+                "figuring out how a system should work and how changes in the future will affect it"
+            ],
+            "abilities": [
+                "Verbal",
+                "communicate by speaking",
+                "communicate by writing",
+                "Ideas and Logic",
+                "make general rules or come up with answers from lots of detailed information",
+                "notice when problems happen",
+                "Math",
+                "add, subtract, multiply, or divide",
+                "choose the right type of math to solve a problem"
+            ],
+            "technologies": [
+                "Analytical or scientific software",
+                "Deoxyribonucleic acid DNA sequence analysis software",
+                "SAS",
+                "Presentation software",
+                "Microsoft PowerPoint",
+                "Data base user interface and query software",
+                "Microsoft Access",
+                "Structured query language SQL"
+            ],
+            "outlook": {
+                "description": "New job opportunities are very likely in the future.",
+                "category": "Bright"
+            },
+            "preprocessed_text": "animal scientist animal nutritionist animal scientist beef cattle nutritionist research scientist conduct research genetics nutrition reproduction growth development domestic farm animal study nutritional requirement animal nutritive value animal feed material write orally communicate research finding scientific community producer public develop improved practice feeding housing sanitation parasite disease control animal"
+        },
+        {
+            "code": "19-3091.00",
+            "title": "Anthropologists & Archeologists",
+            "also_called": "Archaeologist, Communication and Folklore Specialist, Forensic Anthropologist, Researcher",
+            "what_they_do": "Study the origin, development, and behavior of human beings. May study the way of life, language, or physical characteristics of people in various parts of the world. May engage in systematic recovery and examination of material evidence, such as tools or pottery remaining from past human cultures, in order to determine the history, customs, and living habits of earlier civilizations.",
+            "on_the_job": "Collect information and make judgments through observation, interviews, and review of documents., Teach or mentor undergraduate and graduate students in anthropology or archeology., Write about and present research findings for a variety of specialized and general audiences.",
+            "knowledges": [
+                "Math and Science",
+                "sociology and anthropology",
+                "geography",
+                "Arts and Humanities",
+                "English language",
+                "history and archeology",
+                "Education and Training",
+                "teaching and course design",
+                "Communications",
+                "multimedia"
+            ],
+            "skills": [
+                "Basic Skills",
+                "talking to others",
+                "writing things for co-workers or customers",
+                "Problem Solving",
+                "noticing a problem and figuring out the best way to solve it",
+                "People and Technology Systems",
+                "thinking about the pros and cons of different options and picking the best one",
+                "figuring out how a system should work and how changes in the future will affect it"
+            ],
+            "abilities": [
+                "Verbal",
+                "communicate by speaking",
+                "communicate by writing",
+                "Ideas and Logic",
+                "use rules to solve problems",
+                "make general rules or come up with answers from lots of detailed information",
+                "Visual Understanding",
+                "see hidden patterns"
+            ],
+            "technologies": [
+                "Analytical or scientific software",
+                "IBM SPSS Statistics",
+                "The MathWorks MATLAB",
+                "Presentation software",
+                "Microsoft PowerPoint",
+                "Geographic information system",
+                "ESRI ArcGIS software",
+                "Geographic information system GIS software"
+            ],
+            "outlook": {
+                "description": "New job opportunities are very likely in the future.",
+                "category": "Bright"
+            },
+            "preprocessed_text": "anthropologist archeologist archaeologist communication folklore specialist forensic anthropologist researcher study origin development behavior human being may study way life language physical characteristic people various part world may engage systematic recovery examination material evidence tool pottery remaining past human culture order determine history custom living habit earlier civilization collect information make judgment observation interview review document teach mentor undergraduate graduate student anthropology archeology write present research finding variety specialized general audience"
+        }
+    ]
+}

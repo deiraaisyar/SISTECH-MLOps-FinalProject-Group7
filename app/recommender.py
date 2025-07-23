@@ -138,6 +138,14 @@ def recommend_jobs(query_text: str, model, job_data, top_n: int = 5) -> list:
     for idx, sim in enumerate(similarities):
         try:
             job = job_data[idx]
+            # Bersihkan dan konversi num_applicants
+            num_applicants_raw = job.get('num_applicants', '')
+            if isinstance(num_applicants_raw, str):
+                num_applicants_cleaned = ''.join(filter(str.isdigit, num_applicants_raw))  # Hapus teks non-digit
+                num_applicants = int(num_applicants_cleaned) if num_applicants_cleaned else None
+            else:
+                num_applicants = None
+
             results.append({
                 "link": job.get('job_link', ''),
                 "title": job.get('job_title', ''),
@@ -150,7 +158,7 @@ def recommend_jobs(query_text: str, model, job_data, top_n: int = 5) -> list:
                 "function": job.get('job_function', ''),
                 "industries": job.get('industries', ''),
                 "time_posted": job.get('time_posted', ''),
-                "num_applicants": int(float(job['num_applicants'])) if job.get('num_applicants') not in [None, ''] else '',
+                "num_applicants": num_applicants,  # Nilai yang sudah dibersihkan
                 "score": float(sim)
             })
         except Exception as e:

@@ -1,0 +1,26 @@
+{
+    "request_id": 1,
+    "recommendations": [
+        {
+            "program": "sains data",
+            "university": "institut teknologi sepuluh nopember",
+            "rank": 6,
+            "similarity": 1.0,
+            "composite_score": 0.996996996996997
+        },
+        {
+            "program": "sains data",
+            "university": "universitas brawijaya",
+            "rank": 9,
+            "similarity": 1.0,
+            "composite_score": 0.9954954954954955
+        },
+        {
+            "program": "sains data",
+            "university": "universitas sebelas maret",
+            "rank": 13,
+            "similarity": 1.0,
+            "composite_score": 0.9934934934934935
+        }
+    ]
+}
