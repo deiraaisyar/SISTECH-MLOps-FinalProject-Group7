@@ -1,21 +1,6 @@
 services:
   - type: web
     name: mlops-finalproject-group7
-    env: python
-    region: oregon 
-    pythonVersion: 3.10 
-    buildCommand: |
-      curl https://sh.rustup.rs -sSf | sh -s -- -y
-      source $HOME/.cargo/env
-      pip install --prefer-binary -r requirements.txt
-    startCommand: "uvicorn main:app --host 0.0.0.0 --port 8000"
+    env: docker
+    region: oregon
     plan: free
-    envVars:
-      - key: ONET_USERNAME
-        value: career_recommendatio6
-      - key: ONET_PASSWORD
-        value: 7627prw
-      - key: GOOGLE_API_KEY
-        value: AIzaSyCWlrgzgKeaE0yfC0dHFcSreVmfEHp3q2o
-      - key: SEARCH_ENGINE_ID
-        value: 34649d7af03e44383  
