@@ -16,3 +16,5 @@ services:
         value: AIzaSyCWlrgzgKeaE0yfC0dHFcSreVmfEHp3q2o
       - key: SEARCH_ENGINE_ID
         value: 34649d7af03e44383
+
+blueprintName: mlops-finalproject-group7
