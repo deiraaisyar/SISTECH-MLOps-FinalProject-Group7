@@ -3,13 +3,13 @@ from pydantic import BaseModel, Field
 import app.data_processing as dp
 import app.recommender as rec
 
-JOB_CSV_PATH = "preprocessed/linkedin_jobs.csv"
+JOB_CSV_PATH = "translated/linkedin_jobs.csv"
 JOB_JSON_PATH = "preprocessed/linkedin_jobs.json"
 JOB_INDEX_PATH = "app/jobs_tfidf.index"
-COURSE_CSV_PATH = "preprocessed/edx_courses.csv"
+COURSE_CSV_PATH = "translated/edx_courses.csv"
 COURSE_JSON_PATH = "preprocessed/edx_courses.json"
 COURSE_INDEX_PATH = "app/courses_tfidf.index"
-MAJOR_CSV_PATH = "preprocessed/major_final.csv"
+MAJOR_CSV_PATH = "translated/major_final.csv"
 MAJOR_INDEX_PATH = "app/major_tfidf.index"
 
 app = FastAPI(title="Recommender")

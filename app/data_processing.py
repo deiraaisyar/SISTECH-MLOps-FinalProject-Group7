@@ -71,10 +71,6 @@ def load_faiss_index(input_path: str):
     """
     return faiss.read_index(input_path)
 
-
-def translate_to_english(text: str) -> str:
-    pass
-    
 def store_model(model, output_path: str):
     """
     Store the model to a file.
@@ -99,15 +95,12 @@ def load_model(input_path: str):
     else:
         raise ValueError("Unsupported model file type. Use '.pkl' for TF-IDF or directory for Sentence Transformers.")
 
-# Update process_data to include translation
-def process_data(input_path:str, output_path:str, method:str):
-    if(input_path.endswith('.csv')):
+def process_data(input_path: str, output_path: str, method: str, is_program: bool = False):
+    if input_path.endswith('.csv'):
         data = load_csv(input_path)
         text_list = data['text'].tolist()
-    elif(input_path.endswith('.json')):
+    elif input_path.endswith('.json'):
         data = load_json(input_path)
-        # for entry in data:
-        #     entry['text'] = translate_to_english(entry['text'])
         text_list = [entry['text'] for entry in data]
         
     if os.path.exists(output_path):
@@ -120,7 +113,6 @@ def process_data(input_path:str, output_path:str, method:str):
             print(model)
         return data, model, index
 
-    model, embeddings = generate_embeddings(text_list, method)
     if method == 'tfidf':
         store_model(model, output_path.replace('.index', '.pkl'))
     else:
@@ -133,9 +125,10 @@ def process_data(input_path:str, output_path:str, method:str):
     return data, model, index
 
 if __name__ == "__main__":
-    process_data("preprocessed/linkedin_jobs.csv", "app/jobs_tfidf.index", "tfidf")
-    process_data("preprocessed/edx_courses.csv", "app/courses_tfidf.index", "tfidf")
+    process_data("translated/linkedin_jobs.csv", "app/jobs_tfidf.index", "tfidf")
+    process_data("translated/edx_courses.csv", "app/courses_tfidf.index", "tfidf")
     process_data("preprocessed/edx_courses.json", "app/courses_tfidf.index", "tfidf")
     process_data("preprocessed/linkedin_jobs.json", "app/jobs_tfidf.index", "tfidf")
+    process_data("translated/major_final.csv", "app/major_tfidf.index", "tfidf")
     
     print("Data processed and FAISS index created.")
