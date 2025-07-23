@@ -1,7 +1,30 @@
+# Core dependencies
+fastapi==0.95.2
+uvicorn==0.22.0
+
+# Data processing
+pandas>=1.3.0
+numpy>=1.21.0
+scikit-learn>=1.0.0
+
+# Text processing
 nltk>=3.5
-requests>=2.0
-translate
-langdetect
+langdetect>=1.0.9
 deep-translator==1.11.4
+translate>=3.6.1
 sentence-transformers==5.2.1
 
+# Web scraping
+beautifulsoup4>=4.10.0
+requests>=2.26.0
+selenium>=4.10.0
+webdriver-manager>=3.8.6
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Vector database
+faiss-cpu>=1.7.4
+
+# JSON handling
+ujson>=5.7.0
