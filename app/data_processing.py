@@ -5,7 +5,6 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import faiss
 import os
-import translators as ts
 import re
 import json
 import pickle
@@ -74,25 +73,7 @@ def load_faiss_index(input_path: str):
 
 
 def translate_to_english(text: str) -> str:
-    print(f"Input text: {text}")
-    try:
-        # Split text into sentences using regex
-        sentences = re.split(r'(?<=[.!?]) +', text)
-        translated_sentences = []
-        for sentence in sentences:
-            if sentence.strip():  # Ensure the sentence is not empty
-                translation = ts.google(sentence, from_language='id', to_language='en')
-                if translation is None:
-                    print(f"Translation returned None for sentence: {sentence}. Falling back to original.")
-                    translation = sentence
-                translated_sentences.append(translation)
-        # Join translated sentences back into a single text
-        translated_text = ' '.join(translated_sentences)
-        print(f"Output translation: {translated_text}")
-        return translated_text
-    except Exception as e:
-        print(f"Translation error: {e}")
-        return text
+    pass
     
 def store_model(model, output_path: str):
     """

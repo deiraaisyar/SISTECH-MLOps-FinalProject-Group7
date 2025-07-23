@@ -2,4 +2,4 @@ nltk>=3.5
 requests>=2.0
 translate
 langdetect
-googletrans
+translators==5.3.1
