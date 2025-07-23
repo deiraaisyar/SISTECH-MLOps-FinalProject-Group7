@@ -2,7 +2,7 @@ services:
   - type: web
     name: mlops-finalproject-group7
     env: python
-    region: singapore
+    region: oregon 
     buildCommand: "pip install -r requirements.txt"
     startCommand: "uvicorn main:app --host 0.0.0.0 --port 8000"
     plan: free
