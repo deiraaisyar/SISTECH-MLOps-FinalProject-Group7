@@ -138,15 +138,35 @@ SISTECH-MLOps-FinalProject-Group7/
 
 
 ---
+## Environment Variables (.env)
+
+Before running the application, ensure that the `.env` file is properly configured with the following environment variables:
+
+- `ONET_USERNAME`: Your O*NET API username 
+- `ONET_PASSWORD`: Your O*NET API password 
+- `GOOGLE_API_KEY`: Your Google API key 
+- `SEARCH_ENGINE_ID`: Your Google Custom Search Engine ID
+
+These variables are required for accessing the O*NET and Google APIs used in the project.
+
+---
 ## Running the Application
 
-To run the application, use the following command:
+Before starting the application, generate the FAISS indices by running the following command:
+
+```bash
+python app/data_processing.py
+```
+
+This will process the data and create the necessary vector indices for recommendations.
+
+Then, start the application using:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-This will start the FastAPI application and make it accessible at `http://127.0.0.1:8000`.
+This will make the FastAPI application accessible at `http://127.0.0.1:8000`.
 
 ## Testing the Endpoints
 
@@ -220,5 +240,5 @@ Once the application is running, you can test the following endpoints:
 ---
 
 ## Contributors
-- Amelia Wibisono
-- Deira Aisya Refani
+- [Amelia Wibisono](https://github.com/pengwen101)
+- [Deira Aisya Refani](https://github.com/deiraaisyar)
