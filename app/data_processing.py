@@ -20,39 +20,27 @@ def normalize(vectors):
     """
     return vectors / np.linalg.norm(vectors, axis=1, keepdims=True)
 
-def load_csv(input_path:str) -> pd.DataFrame:
-    """
-    Load data from a CSV file.
-    """
-    return pd.read_csv(input_path)
-
 def load_json(input_path: str) -> pd.DataFrame:
     """
-    Load data from a JSON file and convert it to a DataFrame.
+    Load data from a JSON file.
     """
     with open(input_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    
-    # Convert list of dictionaries to DataFrame
-    if isinstance(data, list):
-        return pd.DataFrame(data)
-    else:
-        return pd.DataFrame([data])
+    return data
 
-def generate_embeddings(texts: list, method: str) -> list:
+def generate_embeddings(texts: list, model:SentenceTransformer) -> list:
     """
-    Generate embeddings for a list of texts using the specified method.
+    Generate embeddings for a list of texts
     """
-    if method == 'tfidf':
-        model = TfidfVectorizer()
-        embeddings = model.fit_transform(texts)
-    elif method == 'sentence_transformers':
-        model = SentenceTransformer('all-MiniLM-L6-v2')
-        embeddings = model.encode(texts, verbose=True)
-    else:
-        raise ValueError("Unsupported method. Use 'tfidf' or 'sentence_transformers'.")
-    
-    return model, embeddings
+    embeddings = model.encode(texts, verbose=True)
+    return embeddings
+
+def build_model():
+    """
+    Build a Sentence Transformer model.
+    """
+    model = SentenceTransformer("all-MiniLM-L6-v2")
+    return model
 
 def build_faiss_index(embeddings: list):
     """
@@ -60,8 +48,6 @@ def build_faiss_index(embeddings: list):
     """
     dim = embeddings.shape[1]
     index = faiss.IndexFlatL2(dim)
-    if not isinstance(embeddings, np.ndarray):
-        embeddings = embeddings.toarray()
     index.add(embeddings)
     return index
     
@@ -81,81 +67,81 @@ def store_model(model, output_path: str):
     """
     Store the model to a file.
     """
-    if isinstance(model, TfidfVectorizer):
-        with open(output_path, 'wb') as f:
-            pickle.dump(model, f)
-    elif isinstance(model, SentenceTransformer):
+    if os.path.isdir(output_path):
         model.save(output_path)
     else:
-        raise ValueError("Unsupported model type. Use 'tfidf' or 'sentence_transformers'.")
+        raise ValueError("Output path must be a directory for storing the model.")
     
 def load_model(input_path: str):
     """
     Load the model from a file or directory.
     - For Sentence Transformers, the model should be a directory.
     """
-    if not input_path:
-        raise ValueError("Model path cannot be None. Please provide a valid path.")
-    
     if os.path.isdir(input_path):
         # Load Sentence Transformers model
         return SentenceTransformer(input_path)
     else:
         raise ValueError("Unsupported model file type. Use a directory for Sentence Transformers.")
 
-def process_data(input_path: str, output_path: str, method: str, model_path: str = None):
-    if input_path.endswith('.csv'):
-        data = load_csv(input_path)
-        text_list = data['text'].tolist()
-    elif input_path.endswith('.json'):
-        data = load_json(input_path)
-        print(f"Loaded JSON data: {type(data)}")
-        text_list = data['text'].tolist()
+def get_model(model_path: str):
+    """ 
+    Get the model
+    If the model does not exist, it will be built and stored.
+    """
+    if os.path.exists(model_path):
+        model = load_model(model_path)
+    else:
+        model = build_model()
+        store_model(model, model_path)
+        print(f"Model saved to {model_path}")
+    return model
         
+def process_data(input_path: str, output_path: str, model_path: str = None):
+    data = load_json(input_path)
+    print(f"Loaded JSON data: {type(data)}")
+    text_list = [d['text'] for d in data]
+    
     if os.path.exists(output_path):
         index = load_faiss_index(output_path)
-        model = load_model(model_path)
-        print("Model and index loaded from disk.")
-        return data, model, index
-    
-    # Use Sentence Transformers for embedding
-    if method == "sentence_transformers":
-        model = SentenceTransformer('all-MiniLM-L6-v2')  # Ganti dengan model yang Anda gunakan
-        print(f"Using Sentence Transformers model: {model}")
-        embeddings = model.encode(text_list, show_progress_bar=True)
-        embeddings = normalize(embeddings)
-        if model_path:
-            model.save(model_path)  # Simpan model ke direktori
+        print(f"Index loaded from {output_path}")
     else:
-        raise ValueError("Unsupported method. Use 'sentence_transformers'.")
-
-    index = build_faiss_index(embeddings)
-    save_faiss_index(index, output_path)
-    print(f"Processed data saved to {output_path}")
-    return data, model, index
+        if model_path is None:
+            raise ValueError("Model path must be provided if the index does not exist.")
+        model = get_model(model_path)
+        embeddings = generate_embeddings(text_list, model)
+        embeddings = normalize(embeddings)
+        index = build_faiss_index(embeddings)
+        save_faiss_index(index, output_path)
+        print(f"Index saved to {output_path}")
+    
+    return data, index
 
 if __name__ == "__main__":
-    jobs_df, job_model, job_index = process_data(
+    jobs_data, job_index = process_data(
         input_path="preprocessed/linkedin_jobs.json",
-        output_path="app/models/jobs_st.index",
-        method="sentence_transformers",
+        output_path="app/embeddings/jobs_st.index",
         model_path="app/models/st_model"
     )
-    courses_df, course_model, course_index = process_data(
+    courses_data, course_index = process_data(
         input_path="preprocessed/edx_courses.json",
-        output_path="app/models/courses_st.index",
-        method="sentence_transformers",
+        output_path="app/embeddings/courses_st.index",
         model_path="app/models/st_model"
     )
-    programs_df, program_model, program_index = process_data(
-        input_path="preprocessed/major_final.json",
-        output_path="app/models/programs_st.index",
-        method="sentence_transformers",
+    
+    career_data, career_index = process_data(
+        input_path="preprocessed/onet_careers.json",
+        output_path="app/embeddings/careers_st.index",
         model_path="app/models/st_model"
     )
+    # programs_df, program_model, program_index = process_data(
+    #     input_path="preprocessed/major_final.json",
+    #     output_path="app/models/programs_st.index",
+    #     method="sentence_transformers",
+    #     model_path="app/models/st_model"
+    # )
     
     print("Job model and index loaded.")
     print("Course model and index loaded.")
-    print("Program model:", program_model)
-    print("Program index:", program_index)
-    print("Programs data:", programs_df[:5])  # Tampilkan 5 baris pertama untuk debugging
+    # print("Program model:", program_model)
+    # print("Program index:", program_index)
+    # print("Programs data:", programs_df[:5])  # Tampilkan 5 baris pertama untuk debugging

@@ -1,68 +1,331 @@
 {
     "request_id": 1,
-    "recommendations": [
-        {
-            "title": "Computer Science for Artificial Intelligence",
-            "partner": "['Harvard University']",
-            "primary_description": "Learn programming fundamentals and how to use machine learning in Python.",
-            "secondary_description": "The demand for expertise in AI and machine learning is growing rapidly. By enabling new technologies like self-driving cars and recommendation systems or improving old ones like medical diagnostics and search engines, AI is transforming how we live, work, and play. This series will enable you to take the first steps toward understanding programming fundamentals so you can solve important real-world problems and future-proof your career.\nThis professional certificate series combines CS50’s legendary Introduction to Computer Science course with a new program that takes a deep dive into the concepts and algorithms at the foundation of modern artificial intelligence. This series will lead you through the most popular undergraduate course at Harvard, where you’ll learn the common programming languages, then carries that foundation through CS50’s Introduction to Artificial Intelligence with Python. Through hands-on projects, you’ll gain exposure to the theory behind graph search algorithms, classification, optimization, reinforcement learning, and other topics in artificial intelligence.\nBy course’s end, students emerge with experience in libraries for machine learning as well as knowledge of artificial intelligence principles that enable them to design intelligent systems of their own. Enroll now to gain expertise in one of the fastest-growing domains of computer science from the creators of one of the most popular computer science courses ever.",
-            "tertiary_description": "A broad and robust understanding of computer science and programming,Graph search algorithms,Reinforcement learning,Machine learning,Artificial intelligence principles,How to design intelligent systems,How to use AI in Python programs",
-            "availability": "['Available now']",
-            "subject": "['Computer Science', 'Engineering']",
-            "level": "['Introductory']",
-            "language": "['English']",
-            "product": "Program",
-            "program_type": "['Professional Certificate']",
-            "staff": "['doug-lloyd', 'david-j-malan', 'brian-yu']",
-            "translation_language": "[]",
-            "transcription_language": "[]",
-            "recent_enrollment_count": 597477,
-            "marketing_url": "https://www.edx.org/certificates/professional-certificate/harvardx-computer-science-for-artifical-intelligence",
-            "weeks_to_complete": "",
-            "skill": "['Search Algorithms', 'Medical Diagnosis', 'Algorithms', 'Python (Programming Language)', 'Reinforcement Learning', 'Machine Learning', 'Intelligent Systems', 'Artificial Intelligence', 'Computer Science']",
-            "score": 0.6851884126663208
-        },
-        {
-            "title": "AI in Practice",
-            "partner": "['Delft University of Technology']",
-            "primary_description": "",
-            "secondary_description": "Start by recognizing AI’s multiple benefits and implications and end by making a plan for its application.\nArtificial Intelligence (AI) is like electricity must have been 140 years ago. We may not yet be able to properly imagine how it will affect our lives, but organizations need to start thinking about how AI can be applied to and improve everyday practice.\nWe can’t just leave this to the coding elite either. This program is therefore not about difficult algorithms and complex programming. Rather, it is for anyone, regardless of their professional background or job role, who is interested in learning how to prepare for and apply AI in their own situation, for instance:\n\nExperienced managers who want to know what AI can do for their own organization.\nData analysts or business consultants who want to understand how AI can be applied in the business processes of the company for which they work.\nStudents who want to understand how the results of AI research can be translated into practical applications.\n\nAI innovative solutions, such as the use of machine learning, deep learning, computational argumentation, diagnostic image analysis, reinforcement learning, natural language processing, robotics and data analytics, can help you and your company solve specific problems, drive efficiency and improve performance and decision-making.\nThis two-course program provides a wide range of cases and examples of current AI applications in various organizations. It presents ideas and case studies for actual situations based on state-of-the-art AI research, and provides practical tools for integrating AI into your own organization.\nThis program has been developed by Delft University of Technology and the Innovation Center for Artificial Intelligence Academy (ICAI) in the Netherlands. ICAI is a national initiative involving industry, universities and government in the area of AI research and applications. Case studies presented include contributions from top Dutch universities, public institutions and AI experts from companies such as ING, Ahold Delhaize, Elsevier, KPN and Thirona.",
-            "tertiary_description": "Describe the benefits of implementing AI in organizations, in terms of context, problems, research approach and results.,Identify the implications of implementing AI in terms of improvement strategies for organizations in industry, academia and education.,Understand the aspects of AI compliance and ethics and their significance for your own organization.,Create a plan for the application of AI in your own organization.",
-            "availability": "['Upcoming']",
-            "subject": "['Business & Management', 'Computer Science', 'Data Analysis & Statistics']",
-            "level": "['Intermediate']",
-            "language": "['English']",
-            "product": "Program",
-            "program_type": "['Professional Certificate']",
-            "staff": "['bram-van-ginneken', 'luis-miranda-da-cruz', 'frank-van-harmelen', 'maarten-de-rijke', 'marcel-worring', 'arie-van-deursen', 'floris-bex', 'marleen-huysman-2', 'sennay-ghebreab']",
-            "translation_language": "[]",
-            "transcription_language": "[]",
-            "recent_enrollment_count": 2753,
-            "marketing_url": "https://www.edx.org/certificates/professional-certificate/delftx-ai-in-practice",
-            "weeks_to_complete": "",
-            "skill": "['Business Process', 'Algorithms', 'Reinforcement Learning', 'Applications Of Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'Natural Language Processing', 'Artificial Intelligence', 'Image Analysis', 'Innovation', 'Data Analysis', 'Research']",
-            "score": 0.6776496171951294
-        },
-        {
-            "title": "Introduction to AI",
-            "partner": "['Arm Education']",
-            "primary_description": "Discover the fundamental concepts behind artificial intelligence (AI) and machine learning in this introductory course. Explore the various types of AI, examine ethical considerations, and delve into the key machine learning models that power modern AI systems. Whether your goal is to work directly with AI, strengthen your software development skills, or enhance your data science expertise, this course provides an essential foundation for success in the field.",
-            "secondary_description": "You will:\n\nDefine AI, machine learning, and data science, as well as build knowledge of examples and uses of each.\nExplore the interrelationships between AI, machine learning, and data science.\nBuild understanding of the benefits and challenges of AI, including the ethical and social issues involved.\nExamine a range of neural networks, ML models, and ML frameworks, and explore their applications (including training).\nExplore the discussion around balancing power consumption and sustainability.\nApply the skills and knowledge you have gained across the course to build, train, and run your own ML classification model.\n",
-            "tertiary_description": "Are you curious about how artificial intelligence (AI) really works? Wondering which models power these systems, and how they impact society and the environment? Presented by engineers from Arm, this course offers a comprehensive introduction to AI, machine learning, and data science—shedding light on their historical evolution, current capabilities, and potential future developments.\nBy exploring both the technical concepts and the broader ethical, social, and environmental dilemmas, you will gain a well-rounded understanding of AI’s potential and challenges. You’ll discover how AI, machine learning, and data science interrelate; understand the fundamental algorithms, models, and frameworks; and learn how to apply these concepts in real-world scenarios. The course also addresses the pressing issue of energy consumption in AI.\nKey Topics Covered\n\nThe turbulent history of AI and its evolution into today’s powerful technology\nHow AI, machine learning, and data science fit together , including their definitions, examples, and interrelationship\nCurrent and potential future applications of AI in various industries\nFundamental machine learning concepts , including classifiers, linear regression, and neural networks\nTraining, validation, and test data : how to prepare and evaluate machine learning models\nOptimizers and loss functions : building blocks for fine-tuning your models\nEthical and social considerations : exploring AI’s benefits, challenges, and the importance of responsible development\nPower consumption vs. sustainability : balancing performance and efficiency with environmental impact\nPractical frameworks , such as PyTorch, for implementing and training ML models\nAI in the cloud and on the edge : deploying AI across diverse platforms and computing environments\n\nThe course culminates with a hands-on capstone project using the PyTorch framework and the CIFAR-10 dataset, allowing you to apply newly acquired skills to a real-world image classification challenge. Whether you’re a budding data scientist, a developer looking to integrate AI into your projects, or simply an AI enthusiast, this course offers both the foundational knowledge and practical skills needed to excel in the rapidly evolving world of artificial intelligence.",
-            "availability": "['Available now']",
-            "subject": "['Computer Science', 'Engineering']",
-            "level": "['Introductory']",
-            "language": "['English']",
-            "product": "Course",
-            "program_type": "[]",
-            "staff": "['paul-piwek', 'sarina-ramchandani-2', 'adam-brock-2', 'gianluca-cantone-2', 'megan-arnold-2', 'caitlin-bentley-3', 'oli-howson']",
-            "translation_language": "['Arabic', 'English', 'Spanish (Latin America)', 'Indonesian', 'Portuguese (Brazil)']",
-            "transcription_language": "['Portuguese - Brazil', 'Indonesian', 'Arabic', 'Spanish']",
-            "recent_enrollment_count": 891,
-            "marketing_url": "https://www.edx.org/learn/computer-science/arm-education-introduction-to-ai",
-            "weeks_to_complete": 6,
-            "skill": "['Linear Regression', 'Data Science', 'Algorithms', 'Machine Learning', 'PyTorch (Machine Learning Library)', 'Energy Consumption', 'Artificial Intelligence', 'Contextual Image Classification', 'Curiosity', 'Balancing (Ledger/Billing)', 'Software Development', 'Keys And Locks']",
-            "score": 0.6610435247421265
-        }
-    ]
+    "recommendations": {
+        "courses": [
+            {
+                "marketing_url": "https://www.edx.org/learn/risk-management/indiana-university-planning-for-risk-and-retirement",
+                "title": "Planning for Risk and Retirement",
+                "partner": [
+                    "Indiana University"
+                ],
+                "primary_description": "Learn to assess your tolerance for risk, evaluate investment products, and develop an investment mindset. This course prepares you to compare insurance policies, calculate your need for retirement income, and includes a step-by-step workshop on retirement planning.",
+                "secondary_description": "Through course videos, selected short readings, and self-paced activities, students in this course will gain both conceptual and practical knowledge of the inevitable and universal decisions around managing risk, planning for retirement, and starting a program of investment. You’ll develop your ability to:\n\nClassify a variety of financial risks\nChoose between risk acceptance and risk avoidance\nAssess your family’s need for life insurance including the amount and type\nChoose between whole, term, and universal life products\nUnderstand the features and limitations of property and casualty insurance products\nCompare policy features and costs across insurance products\nUnderstand an insurance policy and how to save money when purchasing\nDetermine your need for renter’s insurance\nDistinguish between basic automobile insurance and coverages\nAssess your need for comprehensive and collision insurance\nParticipate in a step-by-step workshop on retirement planning\nCalculate your retirement income needs and identify common sources of retirement income\nDistinguish between investment and speculation\nUnderstand and compare the features of secured credit\nAssess your tolerance for risk in investments and evaluate investment products\nDevelop your investment mindset\n",
+                "tertiary_description": "Planning for Risk, Retirement and Investment is made possible by the Brian and Sheila Jellison Family Foundation.\nThe Planning for Risk, Retirement & Investment course is designed for individuals to build financial literacy, one of the most pressing needs Americans face today. Financial decisions made by individuals impact the larger community in significant ways with pervasive cost due to financial mistakes. A recent study by the Financial Industry Regulatory Authority (FINRA) reveals over 50% of Americans have less than $10,000 saved for retirement. In addition, over 50% of Americans have no emergency fund, unable to cope with an unexpected car repair without borrowing funds. Financial literacy is an urgent need for many.\nThis course dives deeply into issues and decisions that impact your financial future. You’ll explore strategies around controlling and managing risk, planning for retirement, and cultivating an investment mindset. Through a hands-on approach, you’ll gain answers to common personal financial questions including:\n\nWhat exactly is risk, and why should I care about it?\nWhat are the core concepts and principles of insurance?\nHow do insurance companies help consumers manage risk?\nDo I need to buy life insurance and how much?\nWhat are my family’s needs for security from loss of life and property?\nWhat are my options for life insurance?\nWhat are good decisions that both save money and protect me from reasonable risks?\nDo I need full coverage auto insurance, or can I save money with liability insurance?\nHow much money do I need in retirement, and how do I determine my needs?\nWhere can I look for sources of income in retirement?\nAm I ready both financially and philosophically to be an investor?\nWhat are the risks of investing, and am I ready to accept them?\nHow do I allocate my investments depending upon the stage of my life?\n\nThrough course videos, selected short readings, and self-paced activities, students in this course will gain both practical knowledge of core concepts of risk, retirement, and investment, and a broader view of the role of planning plays in our quest for financial and personal satisfaction.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Economics & Finance"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Course",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "kenneth-carrow",
+                    "todd-roberson"
+                ],
+                "translation_language": [
+                    "Arabic",
+                    "English",
+                    "Spanish (Latin America)",
+                    "Indonesian",
+                    "Portuguese (Brazil)"
+                ],
+                "transcription_language": [
+                    "Arabic",
+                    "Spanish",
+                    "Indonesian",
+                    "Portuguese - Brazil"
+                ],
+                "recent_enrollment_count": 450,
+                "weeks_to_complete": 4.0,
+                "skill": [
+                    "Planning",
+                    "Financial Services",
+                    "Financial Literacy",
+                    "Financial Future",
+                    "Investments",
+                    "Financial Industry Regulatory Authorities",
+                    "Insurance Policies"
+                ],
+                "score": 0.7432851791381836
+            },
+            {
+                "marketing_url": "https://www.edx.org/learn/financial-analysis/new-york-institute-of-finance-financial-analysis-of-insurance-companies-industry-overview-and-analysis-of-financial-and-regulatory-reporting",
+                "title": "Financial Analysis of Insurance Companies – Industry Overview and Analysis of Financial and Regulatory Reporting",
+                "partner": [
+                    "New York Institute of Finance"
+                ],
+                "primary_description": "Take a deep dive into the operating practices, accounting methodology, and regulatory environment of the insurance industry.",
+                "secondary_description": "\nDescribe major industry trends and challenges\nExplain the insurance industry's regulatory environment\nDescribe the operating cycle of an insurance company\nCompare and contrast statutory and U.S. GAAP/IFRS accounting\nDescribe the impairment tests for invested assets\nDifferentiate between loss reserves, policy reserves, UPR and IBNR reserves\n",
+                "tertiary_description": "Want to gain a solid understanding of the unique analysis methods needed to assess the financial strength and operating performance of insurance companies in the US and Europe? \nWe’ll begin this course with a look at the main lines of business and the current operating environment of the Life and Health sector of the industry. We will also discuss the impact of changes in interest rates on investment earnings and sales of annuity products. Next, we’ll turn our attention to the property and casualty sector and its main lines of business. We will then look at the trends in premium and investment income for this sector. Next, we’ll look at other sources of financial data and at the different accounting methods and standards that you will encounter when evaluating insurance companies. \nLearners will also be introduced to the rules of SAP and how it differs from GAAP and IFRS accounting. We’ll also look at the mandate and organization of the U.S insurance regulators and the information that insurance companies are required to report each period in order to document their ongoing solvency. Next, we’ll examine the operating cycle of a typical insurance company starting with issuing a policy and ending with reporting financial results. We’ll also look at some key terms that you’ll need to understand and important issues that you’ll need to consider in your analysis.\nWe’ll wrap up this course with a deep dive into how investments are categorized according to risk, valued, and carried differently on the books of a Life versus a P&C insurance company. We’ll talk about some of the red flags you should look for in the mix of assets a company invests in and in the behavior of its asset managers (internal and external).\nNote: This course is part of the Financial Analysis of Insurance Companies Professional Certificate. \n*Audit the first module on Life and Health sector for free and upgrade to verified to unlock the remaining modules.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Economics & Finance"
+                ],
+                "level": [
+                    "Advanced"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Course",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "jack-farmer"
+                ],
+                "translation_language": [
+                    "Arabic",
+                    "English",
+                    "Spanish (Latin America)",
+                    "Indonesian",
+                    "Portuguese (Brazil)"
+                ],
+                "transcription_language": [
+                    "Arabic",
+                    "French",
+                    "Hindi",
+                    "Indonesian",
+                    "Telugu",
+                    "Portuguese - Brazil",
+                    "German",
+                    "Portuguese",
+                    "Spanish",
+                    "Turkish",
+                    "Swahili"
+                ],
+                "recent_enrollment_count": 376,
+                "weeks_to_complete": 3.0,
+                "skill": [
+                    "Generally Accepted Accounting Principles",
+                    "Solvency",
+                    "Accounting Methods",
+                    "Financial Analysis",
+                    "International Financial Reporting Standards",
+                    "Financial Data",
+                    "Investments",
+                    "Accounting",
+                    "Annuities",
+                    "Sales",
+                    "SAP Applications"
+                ],
+                "score": 0.7813401222229004
+            },
+            {
+                "marketing_url": "https://www.edx.org/learn/actuarial-science/the-university-of-wisconsin-madison-actuarial-science-financial-math-for-actuaries-part-1",
+                "title": "Financial Math for Actuaries: From Rates to Annuities",
+                "partner": [
+                    "The University of Wisconsin-Madison"
+                ],
+                "primary_description": "Start your actuarial career! Study the time-value of money through learning about interest rates, the present and accumulated values of future payments, and the annuity valuation process. This actuarial science course covers foundational concepts tested on SOA Exam FM or CAS Exam 2. This course is part 1 of a 2-course program intended to help students prepare for the SOA Exam FM and CAS Exam 2.",
+                "secondary_description": "Those enrolled in Financial Math for Actuaries: From Rates to Annuities will learn:\n\nTo calculate the present value or accumulated value of payments using rates of interest, rates of discount and the force of interest.\nTo calculate the present value or accumulated value for sequences of non-contingent payments (annuities).\nTo reflect payment timing, longevity, and arithmetic/geometric payment changes in the annuity valuation process.\n",
+                "tertiary_description": "In preparation for SOA Exam FM / CAS Exam 2, the Financial Math for Actuaries: From Rates to Annuities course will give you opportunities to better understand the time value of money through these learning activities:\n\nPerform calculations relating to the present value, current value, and accumulated value of cash flows, using rates of interest, rates of discount and the force of interest.\nCalculate the present value, current value, and accumulated value for sequences of non-contingent payments (annuities).\nReflect payment timing, longevity, and arithmetic/geometric payment changes in the annuity valuation process.\n",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Economics & Finance",
+                    "Math"
+                ],
+                "level": [
+                    "Intermediate"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Course",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "gordon-enderle-6"
+                ],
+                "translation_language": [
+                    "Arabic",
+                    "English",
+                    "Spanish (Latin America)",
+                    "Indonesian",
+                    "Portuguese (Brazil)"
+                ],
+                "transcription_language": [
+                    "Arabic",
+                    "Spanish",
+                    "Indonesian"
+                ],
+                "recent_enrollment_count": 421,
+                "weeks_to_complete": 6.0,
+                "skill": [
+                    "Time Value Of Money",
+                    "Cash Flows",
+                    "Mathematical Finance",
+                    "Actuarial Exams",
+                    "Annuities",
+                    "Actuarial Science"
+                ],
+                "score": 0.7869714498519897
+            }
+        ],
+        "certifications": [
+            {
+                "marketing_url": "https://www.edx.org/certificates/professional-certificate/wisconsinx-actuarial-science-financial-math-and-probability",
+                "title": "Actuarial Science: Financial Math and Probability",
+                "partner": [
+                    "The University of Wisconsin-Madison"
+                ],
+                "primary_description": "This certificate program consists of four courses that cover the financial math and probability concepts you need to begin a career as an actuary.",
+                "secondary_description": "This certificate program consists of four courses that cover the financial math and probability concepts you need to begin a career as an actuary.\nThe program includes two financial math courses that cover material tested on Exam FM of the Society of Actuaries. In these courses, you will learn to project forward and discount back cash flows from loans, bonds or other financial instruments. Applications in actuarial science are emphasized.\nThe program also includes two probability courses that cover material tested on Exam P of the Society of Actuaries. In these courses, you will study general probability and random variables (both univariate and multivariate) and learn how these concepts apply to actuarial science jobs.\nBy completing this certificate program, you will have the topical background necessary to sit for SOA exam P and SOA exam FM. The threshold for passing these exams can be high, and additional self-study may be necessary to gain the speed and accuracy needed to pass the exams.\nThose who complete this certificate and hold a bachelor’s degree are eligible to expand their actuarial education by applying for preferred admission to UW–Madison’s Actuarial Science Capstone Certificate Program.",
+                "tertiary_description": "How to perform calculations relating to the present value, current value, and accumulated value of cash flows, using rates of interest, rates of discount and the force of interest.,How to calculate the price of bonds with various features, develop loan and bond amortization tables, and perform calculations related to loan payments, balances, and refinancing.,General probability concepts including discrete and continuous random variables, expectations, variance, and distributions.,How to perform calculations concerning individual, joint, marginal, and conditional probability functions.,How to apply probability concepts to the valuation of insurance contracts.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Economics & Finance",
+                    "Math"
+                ],
+                "level": [
+                    "Intermediate"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Program",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "gordon-enderle-6"
+                ],
+                "translation_language": [],
+                "transcription_language": [],
+                "recent_enrollment_count": 839,
+                "weeks_to_complete": "",
+                "skill": [
+                    "Cash Flows",
+                    "Mathematical Finance",
+                    "Random Variables",
+                    "Actuarial Exams",
+                    "Financial Instrument",
+                    "Loans",
+                    "Probability",
+                    "Actuarial Science"
+                ],
+                "score": 0.6986192464828491
+            },
+            {
+                "marketing_url": "https://www.edx.org/certificates/professional-certificate/babsonx-financial-decision-making-for-leaders",
+                "title": "Financial Decision-Making for Leaders",
+                "partner": [
+                    "Babson College"
+                ],
+                "primary_description": "Learn financial and quantitative analysis for tackling complex problems that require confident and managerial decision-making.",
+                "secondary_description": "Literacy in business financials, regardless of your industry, is essential for growing your career in management. Whether you are working within an organization or have your own business, the decisions you make affect the health of the business. You must interpret and forecast the impact of your decisions to ensure you are making the best recommendation for the firm. Through the four pillars of financial decision-making: Accounting, Finance, Data Analysis and Economics, you can become a successful entrepreneur or intrapreneur. \nThis program will cover these four pillars in-depth - with each course devoted to exploring a particular topic and how it can inform the decisions you face in your career. If you’re looking to discover and practice the fundamental skills and methodology used in business today, this Professional Certificate program is for you. Some of the topics you will cover in this program include: funding, valuation, key performance metrics, financial forecasting, data analysis, and models of consumer choice and demand.  \nThis program is best suited for professionals who are looking to grow their career into a managerial role where they will need to make financial and analytical decisions.  ",
+                "tertiary_description": "Practical skills for evaluating and forecasting project ideas and decisions from various perspectives,An essential toolkit for analyzing and utilizing financial statements,How to use data analysis to inform managerial decisions,Economic principles that guide your understanding of the market and the relationship between price and quantity",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Business & Management",
+                    "Economics & Finance",
+                    "Data Analysis & Statistics"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Program",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "peter-wilson",
+                    "mark-potter",
+                    "rick-cleary",
+                    "nathan-karst",
+                    "davit-khachatryan",
+                    "george-recck",
+                    "babak-zafari",
+                    "john-korsak"
+                ],
+                "translation_language": [],
+                "transcription_language": [],
+                "recent_enrollment_count": 5061,
+                "weeks_to_complete": "",
+                "skill": [
+                    "Finance",
+                    "Performance Metric",
+                    "Financial Forecasting",
+                    "Economics",
+                    "Accounting",
+                    "Data Analysis",
+                    "Decision Making",
+                    "Entrepreneurship",
+                    "Management"
+                ],
+                "score": 0.7998403310775757
+            },
+            {
+                "marketing_url": "https://www.edx.org/certificates/professional-certificate/babsonx-fundamentals-of-financial-analysis",
+                "title": "Fundamentals of Financial Analysis",
+                "partner": [
+                    "Babson College"
+                ],
+                "primary_description": "Learn the foundational accounting and finance skills needed to drive sound business decisions.",
+                "secondary_description": "Making decisions based on financial data is essential to the success of any company. This accounting and finance Professional Certificate, brought to you by Babson College, the #1 school in Entrepreneurship (U.S. News & World Report), will give learners the foundational accounting and finance skills needed to make critical business decisions.\nWhether you’re an entrepreneur, in management, or looking to become a financial analyst, this program will help you make informed decisions by teaching you financial fundamentals: terms, metrics, and the pillars of primary financial statements: income statement, balance sheet, and cash flow.\nYou'll learn how to interpret and use the information contained in financial statements to make key operating decisions, evaluate a company’s performance, and create forecasts of profits and cash flow. You will learn how to use ratios to diagnose a company's financial health and apply these concepts and tools to valuation, liquidity and other factors for sound decision-making.",
+                "tertiary_description": "How primary financial statements are constructed and what types of information are captured in each statement.,How to calculate key performance ratios and use those metrics to evaluate the performance of your business.,How to create a financial forecast that you can use to better manage your business and to present to potential investors and creditors.,Apply data analysis to managerial decisions, especially in start-ups.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Business & Management",
+                    "Economics & Finance"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Program",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "peter-wilson",
+                    "mark-potter"
+                ],
+                "translation_language": [],
+                "transcription_language": [],
+                "recent_enrollment_count": 3269,
+                "weeks_to_complete": "",
+                "skill": [
+                    "Financial Statements",
+                    "Financial Analysis",
+                    "Finance",
+                    "Market Liquidity",
+                    "Income Statement",
+                    "Financial Data",
+                    "Balance Sheet",
+                    "Accounting",
+                    "Forecasting",
+                    "Entrepreneurship",
+                    "Management",
+                    "Teaching"
+                ],
+                "score": 0.8541399240493774
+            }
+        ]
+    }
 }

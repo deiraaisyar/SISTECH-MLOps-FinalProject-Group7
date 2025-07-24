@@ -2,49 +2,93 @@
     "request_id": 1,
     "recommendations": [
         {
-            "link": "https://id.linkedin.com/jobs/view/software-engineer-at-stickearn-4258683417",
-            "title": "Software Engineer",
-            "company_name": "StickEarn",
-            "location": "Gambir, Jakarta, Indonesia",
-            "responsibilities": "['Participate in the overall system and product design to ensure scalable and maintainable architecture.', 'Develop and maintain both new and existing products using modern frameworks such as PHP 8.2 with Laravel 9 or Node.js 16 with Adonis 5.0.', 'Develop APIs for frontend Vue.js and for internal service purposes.', 'Build products with maintainable, extensible, and scalable codes.', 'Follow existing, further develop, or propose new software design patterns to improve team-wide development processes.', 'Continuously explore, evaluate, and implement new technologies to enhance development efficiency and product quality.']",
-            "requirements": "['Bachelor’s degree in Information Technology, Computer Science, or a related field.', 'Minimum 1 year of professional experience as a Software Engineer or Programmer.', 'Proficiency in PHP (Laravel) or Node.js (AdonisJS) frameworks.', 'Strong experience with MySQL, including crafting performant queries and database design.', 'Solid understanding of Object-Oriented Programming (OOP) and SOLID principles.', 'Familiar with frontend technologies, especially Vue.js and general CSS (preferred but not mandatory).', 'Experience using development tools such as Jira, Bitbucket, and working with Git Feature Branch Workflow.', 'Familiarity with Google Cloud Platform (GCP) products such as GCE, Cloud Storage, Drive, etc.', 'Self-driven, independent, and committed to writing clean, readable, and maintainable code.']",
+            "link": "https://id.linkedin.com/jobs/view/financial-analyst-at-syntek-energy-control-4255546263",
+            "title": "Financial Analyst",
+            "company_name": "Syntek Energy & Control",
+            "location": "Jakarta Metropolitan Area",
+            "responsibilities": [
+                "Monitoring accurate records, both payable and receivables and ensure all transaction is reconciled for monthly end closing",
+                "Assist manager to prepare and deliver timely, accurate, and comprehensive financial reports for internal and/or external stakeholders such as profitability, balance sheet, cashflow projection, and financial ratio",
+                "Identify trends, variances between realization cost vs operational budget expenditure",
+                "Assist manager in corporate budgeting & cost accounting",
+                "Ensure compliance with accounting principles, legal requirements, and company policies"
+            ],
+            "requirements": [
+                "Bachelor's degree in Accounting",
+                "Mandatory experience 2 years minimum in KAP (Public Auditor Firm)",
+                "Good communication, well-mannered, straight to the point, proactive",
+                "Good analytical thinking and problem-solver",
+                "Able to work under minimum supervision and under high pressure",
+                "Good proficiency in google spreadsheet and Ms. excel",
+                "Solid understanding of SAK"
+            ],
             "level": "Associate",
             "employment_type": "Full-time",
-            "function": "Other",
-            "industries": "Advertising Services",
-            "time_posted": "2 weeks ago",
-            "num_applicants": 109,
-            "score": 1.0000001192092896
+            "job_function": "Finance, Analyst, and Administrative",
+            "industries": "Renewable Energy Semiconductor Manufacturing, Electrical Equipment Manufacturing, and Construction",
+            "time_posted": "3 weeks ago",
+            "num_applicants": "",
+            "score": 0.7064650654792786
         },
         {
-            "link": "https://id.linkedin.com/jobs/view/head-of-software-engineering-at-kawan-lama-group-4250316795",
-            "title": "Head of Software Engineering",
-            "company_name": "Kawan Lama Group",
-            "location": "West Jakarta, Jakarta, Indonesia",
-            "responsibilities": "[\"Define and lead the company's long-term technology strategy.\", 'Identify and evaluate new technologies to maintain a competitive edge.', 'Collaborate with executive leadership to align tech initiatives with business goals.']",
-            "requirements": "['Build, lead, and mentor high-performing engineering and IT teams.', 'Establish best practices in software development, DevOps, and cybersecurity.', 'Foster a culture of innovation, continuous improvement, and accountability.']",
-            "level": "Director",
+            "link": "https://id.linkedin.com/jobs/view/senior-corporate-planning-analyst-at-asuransi-astra-4205092771",
+            "title": "Senior Corporate Planning Analyst",
+            "company_name": "Asuransi Astra",
+            "location": "Jakarta, Jakarta, Indonesia",
+            "responsibilities": [
+                "Plan: Gather the data from all business unit",
+                "Do: (a) Ensure there is alignment between management strategy and business units; (b) Identifying, compiling reports, and analyze company business data activities so that it can be evaluated by management; (c) Ensure the data or information that will be processed into reports for management is correct and accurate.",
+                "Check: Prepare monthly review with every business unit to plan activities to achieve company's business targets.",
+                "Action: Ensure the implementation of the planned activities and provide suggestion to business units that need correction so that they can achieve optimal targets."
+            ],
+            "requirements": [
+                "Bachelor's Degree (S1): Any Major",
+                "Minimum experiences: 6 years of relevant work experiences (Financial services industries or consulting firms, with expertise in corporate planing considered advantageous)",
+                "Maximum work experiences: 9 years",
+                "Proficiency in english (passive & active)",
+                "Familiarity with the latest trends and developments in the financial services industry especially in general insurance industry",
+                "Have an excellent in: (a) Data analysis, financial modeling, and able to derive actionable insights from complex data sets; (b) Using relevant planning and analysis tools; (c) Knowledge of industry-standard software and technologies; (d) Able to adapt to changing business environments and priorities.",
+                "Have a strong communication and presentation skills (written & verbal: is a must) to present a complex information to diverse BOD level.",
+                "Have an experiences in leading or collaborate with cross-functional teams/projects"
+            ],
+            "level": "Associate",
             "employment_type": "Full-time",
-            "function": "Information Technology and Strategy/Planning",
-            "industries": "Manufacturing, Retail, and IT Services and IT Consulting",
-            "time_posted": "4 weeks ago",
-            "num_applicants": null,
-            "score": 0.8363343477249146
+            "job_function": "Business Development and Sales",
+            "industries": "Insurance",
+            "time_posted": "3 months ago",
+            "num_applicants": "",
+            "score": 0.7289395332336426
         },
         {
-            "link": "https://id.linkedin.com/jobs/view/project-engineer-at-pt-enha-duta-econsindo-4263013131",
-            "title": "Project Engineer",
-            "company_name": "PT ENHA DUTA ECONSINDO",
-            "location": "Greater Surabaya",
-            "responsibilities": "",
-            "requirements": "",
-            "level": "Entry level",
+            "link": "https://id.linkedin.com/jobs/view/risk-corporate-risk-spx-express-at-shopee-4260955029",
+            "title": "Risk - Corporate Risk, SPX Express",
+            "company_name": "Shopee",
+            "location": "Jakarta, Indonesia",
+            "responsibilities": [
+                "Plan and conduct risk-based reviews/audits of end-to-end business processes",
+                "Identify, assess, and test business processes for potential risks and control deficiencies",
+                "Provide cost-effective recommendations to mitigate business risks and strengthen internal controls",
+                "Identify areas of risk within the organization and propose mitigation strategies",
+                "Assist team lead to prepare detailed rewiew/audit reports with findings and recommendations for management presentation",
+                "Collaborate with various departments to develop action plans and monitor the implementation of the action plans",
+                "Conduct investigation on breach of internal controls and fraud cases/incidents"
+            ],
+            "requirements": [
+                "Bachelor degree with background financial, accounting, economics, or equivalent",
+                "3-5 years of audit/risk experience in the big four public accounting firm or consulting firm, or internal audit experience in logistic company",
+                "Professional certification (CIA, QIA, CFE, CFrA, CRMO, CRMP, etc.) will be a plus",
+                "Strong knowledge of risk/audit standards, procedures, and regulations",
+                "Strong critical thinking, analytical thinking, data analysis, and problem solving skills",
+                "Attention to details and high standard of integrity & ethics",
+                "Willingness to travel around Indonesia (if required)"
+            ],
+            "level": "Mid-Senior level",
             "employment_type": "Full-time",
-            "function": "Engineering and Information Technology",
-            "industries": "Civil Engineering",
+            "job_function": "Administrative",
+            "industries": "Internet Marketplace Platforms and Technology, Information and Internet",
             "time_posted": "1 week ago",
-            "num_applicants": 158,
-            "score": 0.7647864818572998
+            "num_applicants": "69 applicants",
+            "score": 0.7274198532104492
         }
     ]
 }

@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: mlops-finalproject-group7
-    env: docker
-    region: singapore
-    plan: free

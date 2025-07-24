@@ -5,10 +5,10 @@ This project builds a comprehensive recommendation engine designed to guide user
 
 ---
 ## Features
-- Career recommendation based on user’s RIASEC result, interests, and skills
+- Career recommendation based on user’s RIASEC result, major (if user is a highschooler), interests, and skills
 - Job recommendation based on career match
 - Course & Certification recommendations based on career match
-- Majors & University recommendations based on career match
+- Majors & University recommendations based on career match (if user is a highschooler)
 - Career outlook & articles
 
 ---
@@ -18,11 +18,11 @@ The scraping methods in this project involve collecting data from various online
 
 1. **Job Data**:
    - Source: LinkedIn Job API
-   - Method: Web scraping using tools like BeautifulSoup and Selenium to extract job postings, descriptions, and requirements.
+   - Method: Web scraping using API dan BeautifulSoup to extract job postings.
 
 2. **Course Data**:
    - Source: edX API
-   - Method: API integration and web scraping to gather course details, including titles, descriptions, and learning outcomes.
+   - Method: API integration and web scraping to gather course details.
 
 3. **University Majors**:
    - Source: BAN-PT and QS World University Rankings 2026
@@ -34,9 +34,7 @@ The scraping methods in this project involve collecting data from various online
 
 5. **Career Data**:
    - Source: O*NET Online
-   - Method: API integration to fetch career data, including job descriptions, required skills, and career outlooks based on RIASEC scores.
-
-These scraping methods ensure that the dataset remains up-to-date and relevant for generating accurate recommendations.
+   - Method: API integration to fetch career data, including job descriptions, required skills, and career outlooks based on RIASEC scores, user's major, skills, and interests.
 
 ---
 ## Vectorization
@@ -91,6 +89,55 @@ Endpoint:
 Requires an API key and a search engine ID for authentication.
 
 ---
+## Folder Structure
+
+```bash
+SISTECH-MLOps-FinalProject-Group7/
+│
+├── main.py                           # Main FastAPI application
+├── 01_scrapping.ipynb                # Data scraping notebook
+├── 02_preprocessing.ipynb            # Data preprocessing notebook
+├── 03_translate_csv.py               # CSV translation script
+├── 04_methods_evaluation.ipynb       # Model evaluation notebook
+├── app/                              # Core application modules
+│   ├── data_processing.py            # Data processing utilities
+│   ├── recommender.py                # Main recommendation logic
+│   ├── text_preprocessing.py         # Text preprocessing functions
+│   ├── embeddings/                   # FAISS vector indices
+│   │   ├── careers_st.index          # Career embeddings index
+│   │   ├── courses_st.index          # Course embeddings index
+│   │   ├── jobs_st.index             # Job embeddings index
+│   │   └── major_st.index            # Major embeddings index
+│   └── models/                       # Trained models
+│       └── st_model/                 # Sentence Transformer model
+├── model_output_files/               # Sample API output files
+│   ├── output_get_job_articles.json
+│   ├── output_recommend_careers.json
+│   ├── output_recommend_courses.json
+│   ├── output_recommend_jobs.json
+│   └── output_recommend_programs.json
+├── preprocessed/                     # Processed data files
+│   ├── edx_courses.json              # Processed course data
+│   ├── linkedin_jobs.json            # Processed job data
+│   ├── major_final.csv               # Processed major data
+│   ├── major_final.json              # Major data in JSON format
+│   └── onet_careers.json             # Processed career data
+├── scrape_result/                    # Raw scraped data
+│   ├── edx_courses.csv               # Raw course data
+│   ├── jurusan_result.csv            # Raw major data
+│   ├── linkedin_jobs.csv             # Raw job data
+│   ├── onet_careers.json             # Raw career data
+│   └── universitas_indonesia_qs.csv  # University rankings data
+├── translated/                       # Translated data files
+│   └── major_final.csv               # Translated major data
+├── .env                              # Environment variables (ignored by git)
+├── .gitignore                        # Git ignore rules
+├── requirements.txt                  # Python dependencies
+└── README.md                         # Project documentation
+```
+
+
+---
 ## Running the Application
 
 To run the application, use the following command:
@@ -107,41 +154,71 @@ Once the application is running, you can test the following endpoints:
 
 - **`/recommend-careers`**: Accepts RIASEC scores and returns career recommendations.
   - Example: `http://127.0.0.1:8000/recommend-careers`
+  - Input Example
+   ```json
+   {
+   "in_highschool": false,
+   "skills": "Statistical analysis\\nRisk assessment\\nFinancial modeling\\nData interpretation\\nProblem-solving\\nAttention to detail",
+   "interests": "Financial risk analysis\\nInsurance modeling\\nMathematical modeling in finance\\nForecasting and simulation\\nPension & retirement planning\\nData-driven decision making",
+   "major": "Actuarial Science",
+   "r": 5,
+   "i": 15,
+   "a": 0,
+   "s": 0,
+   "e": 0,
+   "c": 15,
+   "top_n": 3,
+   "request_id": 1
+   }
+   ```
 
 - **`/recommend-jobs`**: Accepts a query string and returns job recommendations.
   - Example: `http://127.0.0.1:8000/recommend-jobs`
+  - Input Example (use the `recommendations['text']` field from `/recommend-careers` endpoint)
+   ```json
+   {
+  "query": "actuary actuarial analyst actuary consulting actuary pricing actuary analyze statistical data...",
+  "top_n": 3,
+  "request_id": 1
+   }
+
+   ```
 
 - **`/recommend-courses`**: Accepts a query string and returns course recommendations.
   - Example: `http://127.0.0.1:8000/recommend-courses`
+  - Input Example (use the `recommendations['text']` field from `/recommend-careers` endpoint)
+   ```json
+   {
+  "query": "actuary actuarial analyst actuary consulting actuary pricing actuary analyze statistical data...",
+  "top_n": 3,
+  "request_id": 1
+   }
 
 - **`/recommend-programs`**: Accepts a query string and returns university major or program recommendations.
   - Example: `http://127.0.0.1:8000/recommend-programs`
+  - Input Example (use the `recommendations['text']` field from `/recommend-careers` endpoint)
+   ```json
+   {
+  "query": "actuary actuarial analyst actuary consulting actuary pricing actuary analyze statistical data...",
+  "top_n": 3,
+  "request_id": 1
+   }
 
 - **`/get-job-articles`**: Accepts a query string and returns job-related articles.
   - Example: `http://127.0.0.1:8000/get-job-articles`
+  - Input Example (use the `recommendations['title']` field from `/recommend-careers` endpoint)
+   ```json
+   {
+  "query": "Actuary",
+  "top_n": 3,
+  "request_id": 1
+   }
 
 - **`/health`**: A health check endpoint to verify the API is running.
   - Example: `http://127.0.0.1:8000/health`
 
 ---
-## Evaluation
 
-The evaluation process in this project compares various methods for generating recommendations based on their relevance to the input query. The methods evaluated include traditional approaches like Bag of Words (BoW) and TF-IDF, as well as modern techniques like Word2Vec, FastText, and Sentence Transformers. The key findings are:
-
-1. **Traditional Methods**:
-   - BoW and TF-IDF performed well in identifying relevant results but were limited by their reliance on word frequency and lack of semantic understanding.
-   - Both methods occasionally recommended irrelevant results due to the presence of frequently occurring words in the input text.
-
-2. **Modern Methods**:
-   - **Word2Vec**: Performed better than traditional methods, especially when using Word Mover's Distance (WMD) for similarity calculations. However, it sometimes introduced less relevant results when using cosine similarity.
-   - **FastText**: Delivered similar performance to Word2Vec with WMD but required more computational resources.
-   - **Sentence Transformers**: Outperformed all other methods by capturing semantic meaning effectively. It was the only method that consistently excluded irrelevant results, such as courses unrelated to the input context.
-
-3. **Conclusion**:
-   - Sentence Transformers with cosine similarity is the best-performing method. Its ability to understand the context and semantics of the input text ensures highly relevant recommendations.
-   - To optimize response time, the model and its precomputed embeddings are saved in advance for quick loading during API calls.
-
----
 ## Contributors
 - Amelia Wibisono
 - Deira Aisya Refani
