@@ -55,6 +55,7 @@ def save_faiss_index(index, output_path: str):
     """
     Save the FAISS index to a file.
     """
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     faiss.write_index(index, output_path)
     
 def load_faiss_index(input_path: str):
