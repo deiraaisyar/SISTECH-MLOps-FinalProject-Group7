@@ -1,13 +1,9 @@
 import pandas as pd
 import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
 import faiss
 import os
-import re
 import json
-import pickle
 
 def normalize(vectors):
     """

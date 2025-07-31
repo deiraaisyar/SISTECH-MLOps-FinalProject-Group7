@@ -1,7 +1,6 @@
 import re
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer, WordNetLemmatizer
-import pandas as pd
 import nltk
 
 nltk.download('wordnet')

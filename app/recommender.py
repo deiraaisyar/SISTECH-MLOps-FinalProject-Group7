@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 import os
 from app.text_preprocessing import preprocessing
 from app.data_processing import normalize
-import app.data_processing as dp
 import requests
 import os
 import dotenv
