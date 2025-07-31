@@ -90,7 +90,7 @@ def get_model(model_path: str):
         model = load_model(model_path)
     else:
         model = build_model()
-        store_model(model, model_path)
+        #store_model(model, model_path)
         print(f"Model saved to {model_path}")
     return model
         
