@@ -69,6 +69,7 @@ def store_model(model, output_path: str):
     Store the model to a file.
     """
     if os.path.isdir(output_path):
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
         model.save(output_path)
     else:
         raise ValueError("Output path must be a directory for storing the model.")
