@@ -1,0 +1,91 @@
+{
+    "request_id": 1,
+    "recommendations": [
+        {
+            "link": "https://id.linkedin.com/jobs/view/mechanical-engineering-staff-at-pt-pratama-abadi-industri-4256518354",
+            "title": "Mechanical Engineering Staff",
+            "company_name": "PT.Pratama Abadi Industri",
+            "location": "Kota Tangerang Selatan, Banten, Indonesia",
+            "responsibilities": [
+                "Perform a full lifecycle product development (design, develop, test prototypes, manufacture and implement)",
+                "Analyze design systems and components based on needs and requirements",
+                "Conduct experiment and machine trial methodically, analyze data and interpret the result",
+                "Test and evaluate theoretical machine design",
+                "Identify, formulate and produce effective solution to emerging problem",
+                "Evaluate final machine’s overall performance, reliability and safety",
+                "Ensure the machine to meet the requirements and to eliminate the malfunctions",
+                "Estimate budget and scope of project",
+                "Solicit observation from operator",
+                "Prepare machine reports and documentation"
+            ],
+            "requirements": [
+                "Min. university degree majoring in Mechanical Engineering (or related field)",
+                "Have strong capability in the Mechanical Engineering (mechanical component and technical support)",
+                "Understand about automation",
+                "Able to study and repair the machine with high specification",
+                "Good communication skills, both written and oral (in English)",
+                "Have a good knowledge of current internationally recognized Codes and Standards",
+                "Have awareness of Health, Safety & Work Environment culture as a top priority",
+                "Willing to be placed at Serpong (and mobile depends on project's need)"
+            ],
+            "level": "Entry level",
+            "employment_type": "Full-time",
+            "job_function": "Engineering and Information Technology",
+            "industries": "Sporting Goods Manufacturing",
+            "time_posted": "3 weeks ago",
+            "num_applicants": "",
+            "score": 0.6604674458503723
+        },
+        {
+            "link": "https://id.linkedin.com/jobs/view/electrical-engineer-at-pt-pustek-e-t-4231210125",
+            "title": "Electrical Engineer",
+            "company_name": "PT. Pustek E&T",
+            "location": "Depok, West Java, Indonesia",
+            "responsibilities": [
+                "Design and review electrical systems for industrial and energy projects",
+                "Prepare technical drawings, specifications, and load calculation",
+                "Supervise installation and testing of electrical equipment",
+                "Ensure compliance with safety standards and regulations",
+                "Coordinate with project and site teams to ensure timely execution",
+                "Support commissioning and troubleshooting activities"
+            ],
+            "requirements": [],
+            "level": "Entry level",
+            "employment_type": "Full-time",
+            "job_function": "Engineering and Information Technology",
+            "industries": "Oil and Gas",
+            "time_posted": "1 month ago",
+            "num_applicants": "",
+            "score": 0.7062684297561646
+        },
+        {
+            "link": "https://id.linkedin.com/jobs/view/architectural-product-design-research-development-at-amoda-4262917310",
+            "title": "Architectural Product Design, Research, & Development",
+            "company_name": "AMODA",
+            "location": "Jakarta, Jakarta, Indonesia",
+            "responsibilities": [
+                "Conduct in-depth research on materials, technology, and construction methods to improve production efficiency",
+                "Develop and test product prototypes before implementation in production",
+                "Identify weaknesses and opportunities for improvement in products under development",
+                "Evaluate the effectiveness of materials, designs, and production methods based on data and testing",
+                "Provide technical recommendations to the operations and engineering teams regarding product development results",
+                "Coordinate with vendors and suppliers for material testing and procurement of new raw materials",
+                "Develop work standards, procedures, and technical specifications that can be widely implemented",
+                "Prepare comprehensive documentation related to research results, testing, and product evaluations",
+                "Create innovative solutions to optimize production processes and product quality"
+            ],
+            "requirements": [
+                "A minimum of 4 years of experience in the construction industry; a degree in Architecture or Civil Engineering, specifically in research and product development within the construction or manufacturing industry",
+                "Able to develop and test new materials, methods, and technologies to enhance production efficiency",
+                "Proficient in R&D-related software, such as CAD, BIM, or engineering simulation software"
+            ],
+            "level": "Associate",
+            "employment_type": "Full-time",
+            "job_function": "Research",
+            "industries": "IT Services and IT Consulting",
+            "time_posted": "1 month ago",
+            "num_applicants": "",
+            "score": 0.578360378742218
+        }
+    ]
+}

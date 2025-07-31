@@ -1,5 +1,5 @@
 .env
-major_st.index
+*.index
 *.kv
 *.npy
 *.pkl

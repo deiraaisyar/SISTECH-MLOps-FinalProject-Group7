@@ -1,0 +1,82 @@
+{
+    "request_id": 1,
+    "recommendations": [
+        {
+            "link": "https://id.linkedin.com/jobs/view/data-scientist-intern-college-student-only-at-pt-lion-super-indo-4267675326",
+            "title": "Data Scientist Intern (College Student Only)",
+            "company_name": "PT Lion Super Indo",
+            "location": "Jakarta, Indonesia",
+            "responsibilities": [
+                "Extract, collect and prepare data for analysis",
+                "Develop suitable analysis or model to meet business goals.",
+                "Automate solutions to support future usage by non-technical users"
+            ],
+            "requirements": [
+                "Have finished minimum 6 semesters in any Information Technology field",
+                "Understand Python Programming",
+                "SQL & Database management",
+                "Understand Analytical mind and great business sense",
+                "Proficiency in Basic Statistics",
+                "Understand Exploratory Data Analysis",
+                "Understand Data Wrangling and Preprocessing",
+                "Placement in our office in South Jakarta (WFO 4 days and WFH 1 day)"
+            ],
+            "level": "Internship",
+            "employment_type": "Internship",
+            "job_function": "Information Technology",
+            "industries": "Retail",
+            "time_posted": "1 day ago",
+            "num_applicants": "",
+            "score": 1.0076243877410889
+        },
+        {
+            "link": "https://id.linkedin.com/jobs/view/data-scientist-at-pt-astra-international-tbk-4250003073",
+            "title": "Data Scientist",
+            "company_name": "PT Astra International Tbk",
+            "location": "Jakarta, Jakarta, Indonesia",
+            "responsibilities": [
+                "Able to develop systems and tools to collect, clean, and distribute data from various separate sources",
+                "Able to conduct statistical data analysis and compile reports and visualizations to understand trends and patterns",
+                "Mastering predictive modeling techniques, statistical methods, and data analysis to gain insight from trends and data patterns"
+            ],
+            "requirements": [
+                "S1 graduates, prioritized from the Department of Statistics, Mathematics, Information Engineering, or Information Systems",
+                "Minimum 1 year work experience is preferred; open to fresh graduates",
+                "Have high motivation and positive personality",
+                "Discipline, fast learning, integrity, has a spirit of leadership, as well as the ability to think analytically and good conceptual"
+            ],
+            "level": "Entry level",
+            "employment_type": "Full-time",
+            "job_function": "Engineering and Information Technology",
+            "industries": "Automation Machinery Manufacturing",
+            "time_posted": "1 month ago",
+            "num_applicants": "",
+            "score": 0.8856500387191772
+        },
+        {
+            "link": "https://id.linkedin.com/jobs/view/data-scientist-at-pt-sigma-cipta-caraka-telkomsigma-4251607223",
+            "title": "Data Scientist",
+            "company_name": "PT. Sigma Cipta Caraka (Telkomsigma)",
+            "location": "Kota Tangerang Selatan, Banten, Indonesia",
+            "responsibilities": [
+                "Gather data from various sources, including primary and secondary sources",
+                "Identify patterns, trends, and anomalies in data",
+                "Build machine learning or statistical models to make predictions or classifications",
+                "Assess the performance of models using metrics like accuracy, precision, recall, and F1-score",
+                "Clean and organize data into a format that can be analyzed",
+                "Create tables, graphs, and other visualizations to help understand data",
+                "Create systems and algorithms to automate processes"
+            ],
+            "requirements": [
+                "Experience applying data mining and information retrieval techniques to extract significant insights"
+            ],
+            "level": "Mid-Senior level",
+            "employment_type": "Contract",
+            "job_function": "Science",
+            "industries": "IT Services and IT Consulting",
+            "time_posted": "1 month ago",
+            "num_applicants": "",
+            "score": 0.7729769945144653
+        }
+    ]
+}

@@ -1,0 +1,326 @@
+{
+    "request_id": 1,
+    "recommendations": {
+        "courses": [
+            {
+                "marketing_url": "https://www.edx.org/learn/natural-sciences/harvard-university-backyard-meteorology-the-science-of-weather",
+                "title": "Backyard Meteorology: The Science of Weather",
+                "partner": [
+                    "Harvard University"
+                ],
+                "primary_description": "Learn to forecast the weather just by looking out your window.",
+                "secondary_description": "\nThe role of air, water, and wind in weather systems\nHow to estimate local wind speed and direction\nHow to avoid being struck by lightning\nHow to identify cloud types and features\nHow to describe the attributes of thunderstorms and tornadoes\nHow to collect and interpret data and observations to predict the next day's weather\nThe benefits and drawbacks of weather prediction methods\nThe butterfly effect and its application to weather systems\n",
+                "tertiary_description": "The weather forecasts we see every day are based on an army of meteorological sensing networks and intensive computer modeling. Before the rise of these technologies, predictions were made by methods like discerning cloud formations and wind directions. \nThis course will explore the science behind weather systems by teaching the observational skills needed to make a forecast without using instruments or computer models. We'll discuss the physical processes driving weather and the global forces that shape global climate systems. Finally, we will examine the limits of prediction in both human observations and computer models. \nCan the flap of a butterfly's wings in Brazil set off a tornado in Texas? Take this course to find out!",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Science",
+                    "Physics"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Course",
+                "program_type": [],
+                "staff": [
+                    "john-huth"
+                ],
+                "translation_language": [
+                    "Arabic",
+                    "English",
+                    "Spanish (Latin America)",
+                    "Indonesian",
+                    "Portuguese (Brazil)",
+                    "German (Germany)",
+                    "Greek",
+                    "French",
+                    "Italian (Italy)",
+                    "Korean",
+                    "Russian",
+                    "Thai",
+                    "Turkish (Turkey)",
+                    "Chinese (Simplified)"
+                ],
+                "transcription_language": [
+                    "Portuguese - Brazil",
+                    "German",
+                    "Greek",
+                    "French",
+                    "Russian",
+                    "Korean",
+                    "Turkish",
+                    "Thai",
+                    "Chinese - China",
+                    "Indonesian",
+                    "Spanish",
+                    "Arabic"
+                ],
+                "recent_enrollment_count": 4471,
+                "weeks_to_complete": 6.0,
+                "skill": [
+                    "Computer Simulation",
+                    "Weather Forecasting",
+                    "Meteorology",
+                    "Forecasting"
+                ],
+                "score": 0.5970398783683777
+            },
+            {
+                "marketing_url": "https://www.edx.org/learn/climate-change/sdg-academy-climate-change-the-science-and-global-impact",
+                "title": "Climate Change: The Science and Global Impact",
+                "partner": [
+                    "SDG Academy"
+                ],
+                "primary_description": "We need to understand the science behind global warming to avoid the most damaging and irreversible climate change impacts on people and planet.",
+                "secondary_description": "\nPrinciples of atmospheric science\nClimate data collection and interpretation\nZero-dimensional Energy Balance Models\nOne-dimensional Energy Balanced Models\nGeneral Circulation Models\nCarbon emissions scenarios\nFuture climate change projections\nImpacts on human systems\nEmissions reduction pathways\n",
+                "tertiary_description": "Climate change is arguably the greatest challenge of our time. Human activity has already warmed the planet by one degree Celsius relative to pre-industrial times, and we are feeling the effects through record heat waves, droughts, wildfires and flooding. If we continue to burn fossil fuels at the current rate, the planet will reach two degrees of warming by 2050—the threshold that many scientists have identified as a dangerous tipping point. What is the science behind these projections?\nJoin climate science expert Michael Mann to learn about the basic scientific principles behind climate change and global warming. We need to understand the science in order to solve the broader environmental, societal and economic changes that climate change is bringing.\nBy the end of this course, you will:\n\nDevelop a deep scientific understanding of HOW the climate system has been changing;\nArticulate WHY the climate system is changing;\nUnderstand the nature of these changes;\nDevelop a systems thinking approach to analyzing the impacts of climate change on both natural and human systems.\n\nThe course covers the basic principles of atmospheric science, methods of climate data collection and tracking of greenhouse gas emissions. It introduces basic climate modeling and explores the impact of various greenhouse gas emissions scenarios. Finally, it outlines the impacts of climate change on environmental, social, economic and human systems, from coral reefs and sea level rise to urban infrastructure. The course follows the general outline of the 5th Assessement Report of the United Nations Intergovernmental Panel on Climate Change.",
+                "availability": [
+                    "Available now",
+                    "Upcoming"
+                ],
+                "subject": [
+                    "Energy & Earth Sciences",
+                    "Environmental Studies",
+                    "Biology & Life Sciences"
+                ],
+                "level": [
+                    "Intermediate"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Course",
+                "program_type": [],
+                "staff": [
+                    "michael-mann"
+                ],
+                "translation_language": [
+                    "Arabic",
+                    "English",
+                    "Spanish (Latin America)",
+                    "Indonesian",
+                    "Portuguese (Brazil)"
+                ],
+                "transcription_language": [
+                    "Arabic",
+                    "Spanish",
+                    "Portuguese - Brazil",
+                    "Indonesian"
+                ],
+                "recent_enrollment_count": 1561,
+                "weeks_to_complete": 8.0,
+                "skill": [
+                    "Atmospheric Sciences",
+                    "Systems Thinking",
+                    "Greenhouse Gas",
+                    "Climate Modeling",
+                    "Climatology",
+                    "Climate Variability And Change",
+                    "Infrastructure"
+                ],
+                "score": 0.8134328126907349
+            },
+            {
+                "marketing_url": "https://www.edx.org/learn/data-science/ibm-introduction-to-data-science",
+                "title": "Introduction to Data Science",
+                "partner": [
+                    "IBM"
+                ],
+                "primary_description": "Learn about the world of data science first-hand from real data scientists.",
+                "secondary_description": "\nDefine data science and what data scientists do\nList the tools and algorithms used on a daily basis within the field\nIdentify the skills needed to be a successful data scientist\nDescribe the role of data science within a business\nDescribe how an effective data science team can be formed\n",
+                "tertiary_description": "Please Note: Learners who successfully complete this IBM course can earn a skill badge — a detailed, verifiable and digital credential that profiles the knowledge and skills you’ve acquired in this course. Enroll to learn more, complete the course and claim your badge!\nThe art of uncovering the insights and trends in data has been around for centuries. The ancient Egyptians applied census data to increase efficiency in tax collection and they accurately predicted the flooding of the Nile river every year. Since then, people working in data science have carved out a unique and distinct field for the work they do. This field is data science and in this course, you will meet some big data science practitioners and we will get an overview of what data science is today.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Data Analysis & Statistics",
+                    "Computer Science",
+                    "Business & Management"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Course",
+                "program_type": [
+                    "Professional Certificate",
+                    "Professional Certificate",
+                    "Professional Certificate",
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "alex-aklson"
+                ],
+                "translation_language": [
+                    "Arabic",
+                    "English",
+                    "Spanish (Latin America)",
+                    "Indonesian",
+                    "Portuguese (Brazil)",
+                    "Russian"
+                ],
+                "transcription_language": [
+                    "Arabic",
+                    "German",
+                    "Hindi",
+                    "Telugu",
+                    "Spanish",
+                    "Turkish",
+                    "Portuguese - Brazil",
+                    "Swahili",
+                    "Indonesian",
+                    "Russian",
+                    "Portuguese",
+                    "French"
+                ],
+                "recent_enrollment_count": 5685,
+                "weeks_to_complete": 6.0,
+                "skill": [
+                    "Data Science",
+                    "Big Data",
+                    "Tax Collections",
+                    "Forecasting"
+                ],
+                "score": 0.8364660739898682
+            }
+        ],
+        "certifications": [
+            {
+                "marketing_url": "https://www.edx.org/certificates/professional-certificate/chalmersx-foundations-of-environmental-science-measuring-and-monitoring-our-planet",
+                "title": "Foundations of Environmental Science: Measuring and monitoring our planet",
+                "partner": [
+                    "Chalmers University of Technology"
+                ],
+                "primary_description": "Learn how you can use data from various sensors to better understand our living planet and how it changes.",
+                "secondary_description": "Boost your knowledge about the essential measurement techniques for observing the state of our planet. This professional certificate program covers how you can use data from various sensors to better understand our living planet and how it changes.\nThis entry level program takes you on a virtual journey covering different earth observation tools and techniques which objectives are to find the answers to questions like: Will this year be the hottest year ever? What is the current rate of global sea level rise? How fast is the rain forest disappearing? Where do we find water on our planet? Should we worry about rising sea levels? Can we predict climate change? Our experts will give you first-hand insights on why, where, and how those techniques are used and they will show you how sensors work in space, on aircrafts, and on the ground.\nBy the end of this program, you will be able to assess and evaluate statements made in research reports and in media. This means you will be able to take an active role in discussions and research that involve the environment and climate change.",
+                "tertiary_description": "How we measure solid earth, atmosphere, biosphere, hydrosphere and cryosphere.,How to judge the quality and reliability of observations.,How to compare measurement techniques.,How we use earth observations to better understand our planet.,How to assess the impact of global change on our environment.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Energy & Earth Sciences",
+                    "Environmental Studies",
+                    "Science"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Program",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "karine-le-bail",
+                    "thomas-hobiger",
+                    "bo-galle",
+                    "johan-mellqvist",
+                    "rudiger-haas",
+                    "donal-murtagh",
+                    "peter-forkman",
+                    "maciej-soja",
+                    "anders-berg",
+                    "gisela-carvajal",
+                    "leif-eriksson"
+                ],
+                "translation_language": [],
+                "transcription_language": [],
+                "recent_enrollment_count": 70,
+                "weeks_to_complete": "",
+                "skill": [],
+                "score": 0.7177702784538269
+            },
+            {
+                "marketing_url": "https://www.edx.org/certificates/professional-certificate/tau-climate-change-the-science-behind-the-crisis",
+                "title": "Climate Change. The Science Behind the Crisis",
+                "partner": [
+                    "Tel Aviv University"
+                ],
+                "primary_description": "",
+                "secondary_description": "This course focuses on the scientific background of the present-day climate crisis, often also called Global Warming. The course will give you the scientific knowledge and tools needed to understand the crisis, including the many uncertainties behind the science. What do we really know with great certainty, and what is less certain? Can we still act given the uncertainty in the science behind the  climate crisis?\nAfter a short introduction to global warming, we will go back in time and put the present changes occurring today in context, by looking back in time to the ice ages that have occurred on our planet over the past million years.\nAre the changes happening today really that unusual? Have similar changes occurred in the past? We will then focus our weekly discussions on key aspects of the climate system to better understand the complexity of our climate. We will take a journey to our Sun, the source of all our energy in the climate system. Can the changes in our Sun explain the recent global warming?  We will discuss the Energy Balance of our planet resulting from the balance between the energy we get from the Sun, and the energy lost from the Earth by cooling. We will learn about the water cycle and the important role of clouds and rain in the climate system. How do clouds impact the Earth’s temperature?  We will discuss atmospheric circulation patterns, winds and storms.\nThen we will dive down into the oceans that cover 70% of the planet to understand how the oceans impact our climate. We will visit the frozen parts of the Earth (the cryosphere), and the vegetated parts of our planet (the biosphere). How does the cryosphere impact sea level rise in the future?  How does the biosphere impact carbon dioxide in the atmosphere? We will take a trip to a volcano to understand how large volcanic eruptions can also impact the Earth’s temperature. Could we produce an artificial volcano to offset global warming?\nAfter studying all the different important components of the climate system, we will learn how computer models put all this information together to estimate what may happen to our global and regional climates in 2050 or 2100.  What are the various scenarios for the future? How accurate are these forecasts? And towards the end of the course, we will talk about what can be done to deal with the climate crisis. It is not all bad news. There are some very exciting solutions out there.",
+                "tertiary_description": "We’ll learn how the Earth’s climate is changing today.,We’ll learn about the key components of the climate system.,We’ll learn about possible global warming scenarios in 2100.,We’ll learn about ways to solve the climate crisis.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Energy & Earth Sciences",
+                    "Environmental Studies"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Program",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "colin-price"
+                ],
+                "translation_language": [],
+                "transcription_language": [],
+                "recent_enrollment_count": 258,
+                "weeks_to_complete": "",
+                "skill": [
+                    "Computer Simulation",
+                    "Hydrology",
+                    "Forecasting"
+                ],
+                "score": 0.943297266960144
+            },
+            {
+                "marketing_url": "https://www.edx.org/xseries/harvardx-prediction",
+                "title": "PredictionX",
+                "partner": [
+                    "Harvard University"
+                ],
+                "primary_description": "",
+                "secondary_description": "How did explorers navigate the world before the creation of meridians? What does astrology have to do with modern computer simulations? How did a 19th-century doctor end an epidemic and create epidemiology as we know it today?\nIn PredictionX, learners will journey through the history of predictions and how the desire to uncover future events lead to the creation of a new world of creative technologies beyond our imagination. Learn how ancient practices led to technological advancements, generated modern conveniences, and gave humanity a glimpse of our own future.",
+                "tertiary_description": "Gain insight into the evolution of omens and oracles in ancient civilizations to the creation of forecasting via computer simulations, epidemiology, and GPS.,Explore text and images to better understand the process of building new technologies and medical practices.,Examine efforts to predict the future over recorded history.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "History",
+                    "Science",
+                    "Health & Safety",
+                    "Social Sciences"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Program",
+                "program_type": [
+                    "XSeries"
+                ],
+                "staff": [
+                    "alyssa-goodman"
+                ],
+                "translation_language": [],
+                "transcription_language": [],
+                "recent_enrollment_count": 59720,
+                "weeks_to_complete": "",
+                "skill": [
+                    "Computer Simulation",
+                    "Epidemiology",
+                    "Imagination",
+                    "Forecasting"
+                ],
+                "score": 0.944972574710846
+            }
+        ]
+    }
+}

@@ -1,0 +1,343 @@
+{
+    "request_id": 1,
+    "recommendations": {
+        "courses": [
+            {
+                "marketing_url": "https://www.edx.org/learn/aeronautical-engineering/delft-university-of-technology-introduction-to-aerospace-structures-and-materials",
+                "title": "Introduction to Aerospace Structures and Materials",
+                "partner": [
+                    "Delft University of Technology"
+                ],
+                "primary_description": "Explore the structural and material design of aircraft and spacecraft from the viewpoint of an aerospace engineer.",
+                "secondary_description": "\nHow aerospace structures are designed and why particular choices are made\nWhich materials are used and the reasons for using them\nHow to explain loads and stresses aerospace structures have to withstand\nHow aircraft and spacecraft are manufactured\nThe safety philosophies that are used in aerospace structural design and how they affect design choices\nHow to create preliminary design solutions for structural design problems\n",
+                "tertiary_description": "How do you design an aircraft or spacecraft? And in doing so, how do you keep the risk of failure minimal while bearing in mind that they will eventually fail?\nIn this course you will be taken on a journey through the structural and material design of aircraft. You will see and understand how aircraft and spacecraft are manufactured, and learn how safety is enshrined at every stage.\nExperts from the Aerospace Structures and Materials Department of Delft University of Technology will help you explore and analyze the mechanical properties of materials; learning about manufacturing techniques, fatigue, loads and stresses, design considerations and more - all the scientific and engineering principles that structural and materials engineers face on a daily basis. By the end of the course, you will have learned to think like they do!\nJoin us for an exciting learning experience that includes experiments; some of which you can do by yourself at home, online lectures, quizzes, and design assignments.",
+                "availability": [
+                    "Available now",
+                    "Upcoming"
+                ],
+                "subject": [
+                    "Engineering",
+                    "Physics",
+                    "Design"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Course",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "dr-calvin-rans",
+                    "katharina-ertman",
+                    "gillian-saunders-smits",
+                    "rene-alderliesten",
+                    "jos-sinke",
+                    "julie-teuwen"
+                ],
+                "translation_language": [
+                    "Arabic",
+                    "English",
+                    "Spanish (Latin America)",
+                    "Indonesian",
+                    "Portuguese (Brazil)"
+                ],
+                "transcription_language": [
+                    "Arabic",
+                    "Portuguese - Brazil",
+                    "Spanish",
+                    "Indonesian"
+                ],
+                "recent_enrollment_count": 1441,
+                "weeks_to_complete": 8.0,
+                "skill": [
+                    "Material Design",
+                    "Spacecraft",
+                    "Experimentation"
+                ],
+                "score": 0.6999518871307373
+            },
+            {
+                "marketing_url": "https://www.edx.org/learn/engineering/mathworks-introducing-engineering-system-design",
+                "title": "Introduction to Engineering Design",
+                "partner": [
+                    "MathWorks"
+                ],
+                "primary_description": "Gain a comprehensive overview of the engineering design workflow through the power of modeling and simulation.",
+                "secondary_description": "\nAn introduction to the engineering design workflow\nHow to apply engineering system design\nAn introduction to the Simulink environment\n",
+                "tertiary_description": "Welcome to Introduction to Engineering Design, the first course in the Engineering Design and Simulation Program. This course will give you a comprehensive overview of the engineering design workflow through the power of modeling and simulation, using the example of a quadcopter. \nIn this first course, you will navigate and run existing models. Building on this foundation, you will inspect simulation results to observe the system's behavior changes. Whether you are an engineer modeling every day, or part of a larger design team who wants to experiment and understand more about the tools in use, you will find these skills valuable.\nAn essential aspect of the course is mastering the interpretation of simulation results. You will learn to effectively analyze and draw meaningful conclusions from the simulation outputs, enhancing your engineering design capabilities.\nBy the end of this course, you will know how to navigate Simulink, run simulations, and analyze results while gaining the ability to break down complex systems into subsystems and interpret simulation outputs for effective engineering design.\nNo prior modeling experience is required. Simulink and Simscape, industry-leading block diagram environments, are used throughout the courses to teach fundamental modeling workflows. You will be provided with a free license for the duration of the program.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Engineering",
+                    "Design"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Course",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "brian-neiswander",
+                    "ali-nejad",
+                    "tianyi-zhu",
+                    "nikola-trica",
+                    "sam-turton",
+                    "teresa-hubscher-younger"
+                ],
+                "translation_language": [
+                    "Arabic",
+                    "English",
+                    "Spanish (Latin America)",
+                    "Indonesian",
+                    "Portuguese (Brazil)"
+                ],
+                "transcription_language": [
+                    "Arabic",
+                    "Spanish",
+                    "Portuguese - Brazil",
+                    "Indonesian"
+                ],
+                "recent_enrollment_count": 1188,
+                "weeks_to_complete": 1.0,
+                "skill": [],
+                "score": 0.7846056222915649
+            },
+            {
+                "marketing_url": "https://www.edx.org/learn/product-design/the-university-of-maryland-college-park-product-design-prototyping-and-testing",
+                "title": "Product Design, Prototyping, and Testing",
+                "partner": [
+                    "The University of Maryland, College Park"
+                ],
+                "primary_description": "Translate product ideas into tangible assets by creating wireframes, 3D renderings, prototypes, and minimum viable products (MVPs) to test assumptions and validate customer interests",
+                "secondary_description": "\nDevelopment processes and organizations. The customer needs process, Lean UX, diagrams, sketches, wireframes, prototypes, and emerging technologies.\nConcept generation and selection. Defining product specifications, establishing target specifications, and setting the final specifications.\nProduct design and architecture. Industrial design, design for the environment, and design for manufacturing.\nPrinciples of prototyping and user experience. Planning for prototyping, service design, mapping the user experience, and anatomy of an experience map.\nWireframing and prototyping models. Product architecture, choosing a wireframing/UX prototyping tool, Software Development Lifecycle (SDLC) and Web Design Lifecycle, and open source.\nRobust design considerations. Robust design process and version control.\nTesting and troubleshooting. Red team and blue team, recovering from disaster, and strategies for recovery.\nProject management. Guidelines for project planning and project execution.\n",
+                "tertiary_description": "Designing the customer and user experience is essential to creating great products today. Gone is the old paradigm of “form follows function” model of design. The process must be iterative and follow the best product design and development processes. While designing a great user experience can be a lengthy and expensive process, there are approaches to doing it faster and smarter, without compromising results.\nThis essential product management course explains key design thinking principles around personas, story mapping, and prototyping. Product managers need to know and appreciate product designer tools and processes. By combining these principles with good scrum processes, you’ll learn to create great products that don’t sacrifice design for functionality or feasibility.\nThis course enables students to transition from ideas to prototyping and concept testing of their products and services. Students learn how best to effectively translate ideas into marketable offerings so that the best product and service ideas are harnessed and create real value for customers and the organization. Emphasis is placed on an integrated and interdisciplinary approach to engineering design, concurrent engineering, design for manufacturing, industrial design, and the business of new product development. Topics include design methods, modeling and simulation, material and manufacturing process selection, platform and modular design, mass customization, planning and scheduling.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Business & Management",
+                    "Computer Science",
+                    "Design"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Course",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "cait-von-schnetlage"
+                ],
+                "translation_language": [
+                    "Arabic",
+                    "English",
+                    "Spanish (Latin America)",
+                    "Indonesian",
+                    "Portuguese (Brazil)"
+                ],
+                "transcription_language": [
+                    "Arabic",
+                    "German",
+                    "Indonesian",
+                    "Spanish",
+                    "Telugu",
+                    "Swahili",
+                    "Portuguese - Brazil",
+                    "French",
+                    "Turkish",
+                    "Portuguese",
+                    "Hindi"
+                ],
+                "recent_enrollment_count": 1521,
+                "weeks_to_complete": 4.0,
+                "skill": [
+                    "Mass Customization",
+                    "Planning",
+                    "Product Design",
+                    "Engineering Design Process",
+                    "Manufacturing Processes",
+                    "Function Model",
+                    "Scrum (Software Development)",
+                    "Industrial Design",
+                    "Product Management",
+                    "Concurrent Engineering",
+                    "Prototyping",
+                    "Concept Testing",
+                    "Design Thinking",
+                    "Modular Design",
+                    "New Product Development",
+                    "Persona (User Experience)",
+                    "User Experience",
+                    "Wireframing"
+                ],
+                "score": 0.8153936862945557
+            }
+        ],
+        "certifications": [
+            {
+                "marketing_url": "https://www.edx.org/certificates/professional-certificate/mathworks-engineering-design-and-simulation",
+                "title": "Engineering Design and Simulation",
+                "partner": [
+                    "MathWorks"
+                ],
+                "primary_description": "Develop a foundation in modeling and simulation skills to design and evaluate complex engineering systems.",
+                "secondary_description": "Skills in software modeling and simulation are essential to any engineer's toolkit and enable participation in the design and evaluation of modern complex systems. Advancements in this area have led to the development of digital twins, enabling engineers to test and refine their designs without the need for physical prototypes. Industries as far ranging as aerospace, automotive, manufacturing, energy production, and electronics all require these skills to create the next generation of technology. Whether building a smart consumer device or a safety-critical system, these skills allow design teams to test a wide range of environments and conditions.\nThis four-course program takes you from the basics of engineering design and simulation to the design of a complete system-level quadcopter model. At first, you will use Simulink and Simscape to run simulations and modify the behavior of the systems represented. Then you will be guided through the process of designing a quadcopter model. You'll model the individual components, taking the opportunity to ensure each subsystem is meeting the specifications. Lastly, you'll combine the mechanical and electrical subsystems to create a comprehensive quadcopter system model while verifying the results for accuracy and reliability. Special course projects are included throughout the program to challenge your modeling and simulation skills with real-world engineering problems so you can easily apply the skills learned to different scenarios.\nBy the end of this program, you will possess the essential engineering design and simulation techniques to evaluate complex engineering systems and have a working model of a quadcopter.\nNo prior modeling experience is required. Simulink and Simscape, industry-leading block diagram environments, are used throughout the courses to teach fundamental modeling workflows. You will be provided with a free license for the duration of the program.\nEngineering design and simulation skills continue to be important in many professional roles. Completing this program can be the first step towards acquiring the necessary skills to keep up with the constantly changing job market. Whether you are a recent engineering graduate looking to set yourself apart or a seasoned industry professional seeking new simulation skills, this program will provide a valuable starting point.\nThe four courses should be completed in order:\r\n\nIntroduction to Engineering Design\nSimulating a Quadcopter's Flight\nSimulating a Quadcopter's Electromechanics\nAssembling and Testing a Quadcopter\n",
+                "tertiary_description": "An introduction to modeling and simulation for engineering design.,The fundamental modeling workflows in Simulink and Simscape.,How to use modeling and simulation to answer engineering questions.,How to design a quadcopter using Simulink and Simscape.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Engineering",
+                    "Design"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Program",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "brian-neiswander",
+                    "nikola-trica",
+                    "ali-nejad",
+                    "sam-turton",
+                    "teresa-hubscher-younger",
+                    "tianyi-zhu"
+                ],
+                "translation_language": [],
+                "transcription_language": [],
+                "recent_enrollment_count": 1808,
+                "weeks_to_complete": "",
+                "skill": [
+                    "Digital Twin",
+                    "Automotive Manufacturing",
+                    "Engineering Design Process",
+                    "Simscape",
+                    "Block Diagram",
+                    "Modeling Languages",
+                    "Energy Production",
+                    "Simulink",
+                    "Simulations",
+                    "Refining",
+                    "Subsystems",
+                    "Workflow Management"
+                ],
+                "score": 0.7007736563682556
+            },
+            {
+                "marketing_url": "https://www.edx.org/certificates/professional-certificate/delftx-sustainable-aircraft-design-the-challenges-of-electric-aircraft",
+                "title": "Sustainable Aircraft Design: The Challenges of Electric Aircraft",
+                "partner": [
+                    "Delft University of Technology"
+                ],
+                "primary_description": "Gain fundamental knowledge in aeronautical engineering and sustainable aviation while discovering and analyzing solutions for electric aircraft.",
+                "secondary_description": "This program offers you three MOOCs in the field of aerospace engineering and the opportunity to apply the knowledge gained from these courses to critically analyze the conceptual design of a future electric aircraft.\nAlthough electric aircraft hold great promise, their design presents one of the biggest challenges in aviation—primarily due to the integration of batteries, which significantly impact aircraft performance and structural integrity.\n\r\nBy following this program, you will explore the following MOOCs:\r\n\nIntroduction to Aeronautical Engineering\r\n\nIntroduction to Aerospace Structures and Materials\r\n\nSustainable Aviation: The Route to Climate-Neutral Aviation\r\n\n\n Finally, through a case study-based assignment, you will apply the knowledge acquired in these courses to evaluate the design and performance of a conceptual electric aircraft. This challenge requires making critical decisions on wing redesign, material selection, and propulsion system integration. You will also assess whether the fuel and emission savings achieved through battery propulsion impose limitations on performance requirements and certification.",
+                "tertiary_description": "The fundamentals of aerodynamics, flight mechanics, and aircraft propulsion systems, and how changes in aircraft design affect flight performance.,Aerospace structures and materials, covering topics such as material selection, design loads, manufacturing techniques, and certification requirements.,The climate impact of aviation and how future aircraft design, energy carriers, and propulsion systems can help reduce overall emissions in the aviation sector.,Analyse and propose solutions for the aerodynamic and structural challenges of battery integration in lifting surfaces.,Calculate energy efficiency and net emissions, assessing the role of electric aircraft in achieving sustainable aviation goals.,Critically evaluate the performance of such aircraft in the context of current and future technology readiness levels.",
+                "availability": [
+                    "Available now",
+                    "Upcoming"
+                ],
+                "subject": [
+                    "Engineering",
+                    "Physics",
+                    "Design",
+                    "Environmental Studies"
+                ],
+                "level": [
+                    "Introductory"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Program",
+                "program_type": [
+                    "Professional Certificate"
+                ],
+                "staff": [
+                    "irene-dedoussi",
+                    "maurice-hoogreef",
+                    "nando-timmer",
+                    "henri-werij",
+                    "katharina-ertman",
+                    "gillian-saunders-smits",
+                    "jacco-m-hoekstra",
+                    "jos-sinke",
+                    "rene-alderliesten",
+                    "mark-voskuijl",
+                    "julie-teuwen",
+                    "irene-fernandez-villegas",
+                    "arvind-gangoli-rao",
+                    "dr-calvin-rans",
+                    "bruno-santos",
+                    "roelof-vos",
+                    "carmine-varriale",
+                    "joris-melkert"
+                ],
+                "translation_language": [],
+                "transcription_language": [],
+                "recent_enrollment_count": 4910,
+                "weeks_to_complete": "",
+                "skill": [
+                    "Aerospace Engineering",
+                    "Conceptual Design",
+                    "Material Selection"
+                ],
+                "score": 0.8161560297012329
+            },
+            {
+                "marketing_url": "https://www.edx.org/masters/micromasters/umbc-human-centered-design",
+                "title": "Human-Centered Design",
+                "partner": [
+                    "University of Maryland Baltimore County"
+                ],
+                "primary_description": "",
+                "secondary_description": "Small tech startups, large corporations, and even government organizations are all beginning to recognize that creating solutions for their clients must go beyond simply producing functional and useable products/services. To best support their populations, designing tech solutions to problems must be more than functional. They must be more than usable. Solutions must be designed to maximize the totality of the experience that a person has with the designed solution.\nIn this program you will learn concepts, tools, and techniques, needed to design and develop information system solutions that will maximize the experience of those who will use your solutions, enabling you to work in a myriad of real-world roles that require designing IT solutions for clients. Program coverage includes important information to better understand how humans perceive, understand, and function in the world. In addition, this program will introduce you to techniques and tools to show you how to effectively gather and analyze information about the people you are designing for as well as tools and techniques for designing and testing IT solutions.\nIn this program learn what is needed to design solutions to maximize the users’ experience people with your solutions. Topics include understanding how humans perceive, understand, and behave, gathering/analyzing info about users, and designing/testing possible IT solutions to human problems.",
+                "tertiary_description": "Learn what is important to know about humans.,Gather and analyze data about users.,Design a prototype of an IT solution to a human problem.,Test an IT solution to a human problem.",
+                "availability": [
+                    "Available now"
+                ],
+                "subject": [
+                    "Computer Science",
+                    "Design"
+                ],
+                "level": [
+                    "Intermediate"
+                ],
+                "language": [
+                    "English"
+                ],
+                "product": "Program",
+                "program_type": [
+                    "MicroMasters"
+                ],
+                "staff": [
+                    "sidas-saulynas"
+                ],
+                "translation_language": [],
+                "transcription_language": [],
+                "recent_enrollment_count": 71,
+                "weeks_to_complete": "",
+                "skill": [],
+                "score": 0.8963565230369568
+            }
+        ]
+    }
+}

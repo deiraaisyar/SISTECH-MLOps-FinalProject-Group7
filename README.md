@@ -206,7 +206,7 @@ Once the application is running, you can test the following endpoints:
 
 - **`/recommend-courses`**: Accepts a query string and returns course recommendations.
   - Example: `http://127.0.0.1:8000/recommend-courses`
-  - Input Example (use the `recommendations['text']` field from `/recommend-careers` endpoint)
+  - Input Example (use the `recommendations[0]['text']` field from `/recommend-careers` endpoint)
    ```json
    {
   "query": "actuary actuarial analyst actuary consulting actuary pricing actuary analyze statistical data...",
@@ -216,7 +216,7 @@ Once the application is running, you can test the following endpoints:
 
 - **`/recommend-programs`**: Accepts a query string and returns university major or program recommendations.
   - Example: `http://127.0.0.1:8000/recommend-programs`
-  - Input Example (use the `recommendations['text']` field from `/recommend-careers` endpoint)
+  - Input Example (use the `recommendations[0]['text']` field from `/recommend-careers` endpoint)
    ```json
    {
   "query": "actuary actuarial analyst actuary consulting actuary pricing actuary analyze statistical data...",
@@ -226,7 +226,7 @@ Once the application is running, you can test the following endpoints:
 
 - **`/get-job-articles`**: Accepts a query string and returns job-related articles.
   - Example: `http://127.0.0.1:8000/get-job-articles`
-  - Input Example (use the `recommendations['title']` field from `/recommend-careers` endpoint)
+  - Input Example (use the `recommendations[0]['title']` field from `/recommend-careers` endpoint)
    ```json
    {
   "query": "Actuary",

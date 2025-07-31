@@ -1,0 +1,23 @@
+{
+    "request_id": 1,
+    "recommendations": [
+        {
+            "university": "politeknik penerbangan surabaya",
+            "program": "teknik pesawat udara",
+            "rank": 999,
+            "score": 0.8532910346984863
+        },
+        {
+            "university": "politeknik penerbangan indonesia curug",
+            "program": "teknik pesawat udara",
+            "rank": 999,
+            "score": 0.8532910346984863
+        },
+        {
+            "university": "sekolah tinggi teknologi kedirgantaraan",
+            "program": "teknik dirgantara",
+            "rank": 999,
+            "score": 0.9114990234375
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "request_id": 1,
+    "recommendations": [
+        {
+            "university": "institut teknologi bandung",
+            "program": "meteorologi",
+            "rank": 3,
+            "score": 0.93221515417099
+        },
+        {
+            "university": "institut pertanian bogor",
+            "program": "meteorologi terapan",
+            "rank": 5,
+            "score": 0.9392932653427124
+        },
+        {
+            "university": "sekolah tinggi meteorologi klimatologi dan geofisika",
+            "program": "meteorologi",
+            "rank": 999,
+            "score": 0.93221515417099
+        }
+    ]
+}
