@@ -91,7 +91,7 @@ def get_model(model_path: str):
     else:
         model = build_model()
         #store_model(model, model_path)
-        print(f"Model saved to {model_path}")
+        #print(f"Model saved to {model_path}")
     return model
         
 def process_data(input_path: str, output_path: str, model_path: str = None):
